@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>HITTimer Watch App.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>HITTimer.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>HITTimerWidgetExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>9C59C4792A834127000ACB45</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9C59C4892A834128000ACB45</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9C9BC4AD2A85274B001EDA39</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9C9BC4C42A852848001EDA39</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9CFBAC062A852F6A000B55B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9CFBAC1D2A8534BE000B55B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
