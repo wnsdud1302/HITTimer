@@ -14,8 +14,8 @@
             filePath = "TimerModel/intervalTimer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "addTimers(_:rst:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,9 +30,9 @@
             filePath = "TimerModel/intervalTimer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "intervalTimer"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "IntervalTimer"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
@@ -62,57 +62,10 @@
             filePath = "TimerModel/intervalTimer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "skipTimer()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "21CC7CB9-E1CF-434B-A168-90397734887E - efc8a0108077a55a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HITTimer.intervalTimer.skipTimer() -&gt; ()"
-                  moduleName = "HITTimer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/junyeong/Desktop/app/HITTimer/TimerModel/intervalTimer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "560">
-               </Location>
-               <Location
-                  uuid = "21CC7CB9-E1CF-434B-A168-90397734887E - efc8a0108077a55a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HITTimer.intervalTimer.skipTimer() -&gt; ()"
-                  moduleName = "HITTimer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/junyeong/Desktop/app/HITTimer/TimerModel/intervalTimer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "576">
-               </Location>
-               <Location
-                  uuid = "21CC7CB9-E1CF-434B-A168-90397734887E - b975b7011a2a0884"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HITTimer_Watch_App.intervalTimer.skipTimer() -&gt; ()"
-                  moduleName = "HITTimer Watch App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/junyeong/Desktop/app/HITTimer/TimerModel/intervalTimer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "576">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

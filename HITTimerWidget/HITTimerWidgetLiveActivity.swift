@@ -44,7 +44,7 @@ struct HITTimerWidgetLiveActivity: Widget {
                     // more content
                 }
             } compactLeading: {
-                Text("L")
+                Text(String(context.state.timeRemain))
             } compactTrailing: {
                 Text("T")
             } minimal: {

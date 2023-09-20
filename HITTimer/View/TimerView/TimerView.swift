@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+
 struct TimerView: View {
-    @ObservedObject var intervaltimer = intervalTimer.shared
-    @ObservedObject var liveActivity = TimerLiveActivity()
+    
+    @EnvironmentObject var intervaltimer: IntervalTimer
+    @ObservedObject var liveActivity = TimerLiveActivity.shared
     
     
     @State var timeRemain = 0
@@ -45,7 +47,7 @@ struct TimerView: View {
                         Circle()
                             .frame(width: 80, height: 80)
                             .foregroundColor(.orange)
-                        Image(systemName: pause ? "pause.fill" : "play.fill")
+                        Image(systemName: pause ? "play.fill" : "pause.fill")
                             .foregroundColor(.white)
                             .font(.system(size: 50))
                     }
@@ -77,15 +79,13 @@ struct TimerView: View {
         }
         .onDisappear{
             intervaltimer.stopTimers()
+            liveActivity.offLiveActivity()
         }
         .onChange(of: pause){
             if $0 {
                 intervaltimer.stopTimers()
-                liveActivity.offLiveActivity()
             }else{
                 intervaltimer.startTimers()
-                liveActivity.onLiveActivity()
-                liveActivity.timerTest()
             }
         }
         .onReceive(intervaltimer.$timeRemain){
@@ -103,6 +103,7 @@ struct TimerView: View {
         .onChange(of: intervaltimer.timers.isEmpty){
             if $0 {
                 start = false
+                liveActivity.offLiveActivity()
             }
         }
     }

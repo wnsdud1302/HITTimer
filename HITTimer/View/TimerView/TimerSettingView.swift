@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import UserNotifications
 
-struct ContentView: View {
+struct TimerSettingView: View {
     
-    @ObservedObject var intervaltimer = intervalTimer.shared
+    @EnvironmentObject var intervaltimer: IntervalTimer
+    @EnvironmentObject var datamanager: DataManager
+    @EnvironmentObject var wcmanager: WatchConnectManager
+    
     
     @State var WOmin = 0
     @State var WOsec = 0
@@ -19,28 +23,47 @@ struct ContentView: View {
     
     @State var sets = 1
     
-    @State var start = false
+    @Binding var start:Bool
+    
+    let notificaiton = UNUserNotificationCenter.current()
     
     var body: some View {
         VStack{
-            if !start {
                 NavigationStack{
                     VStack {
                         Spacer()
-                        Text(totalTime())
+                        Text(secondsToHMS(totalTime()))
                             .font(.system(size: 50))
                         Spacer()
-                        Button(action: {
-                            intervaltimer.addTimers(totalSec(0, WOmin, WOsec), rst: totalSec(0, RSTmin, RSTsec), sets)
-                            start = true
-                        }){
-                            ZStack{
-                                Circle()
-                                    .frame(width: 100, height: 100)
-                                    .foregroundColor(.red)
-                                Image(systemName: "play.fill")
-                                    .font(.system(size: 70))
-                                    .foregroundColor(.white)
+                        HStack{
+                            Button(action: {
+                                intervaltimer.addTimers(totalSec(0, WOmin, WOsec), totalSec(0, RSTmin, RSTsec), sets)
+                                start = true
+                            }){
+                                ZStack{
+                                    Circle()
+                                        .frame(width: 100, height: 100)
+                                        .foregroundColor(.red)
+                                    Image(systemName: "play.fill")
+                                        .font(.system(size: 70))
+                                        .foregroundColor(.white)
+                                }
+                            }
+                            .padding(.trailing, 90)
+                            Button(action:{
+                                if totalTime() != 0{
+                                    datamanager.insertData(totaltime: totalTime(), wotime: totalSec(0, WOmin, WOsec), rstime: totalSec(0, RSTmin, RSTsec), sets: sets)
+                                    
+                                }
+                            }){
+                                ZStack{
+                                    Circle()
+                                        .frame(width: 100)
+                                        .foregroundColor(Color(red: 0.5, green: 0.7, blue: 0.7))
+                                    Image(systemName: "applewatch.watchface")
+                                        .font(.system(size: 65))
+                                        .foregroundStyle(.white)
+                                }
                             }
                         }
                         .padding(.bottom, 5)
@@ -79,18 +102,12 @@ struct ContentView: View {
                     }
                     .padding()
                 }
-                .transition(.move(edge: .bottom))
-            }
-            else{
-                TimerView(start: $start)
-                    .transition(.move(edge: .bottom))
             }
         }
-        .animation(.linear(duration: 0.2), value: start)
-    }
 }
 
-extension ContentView{
+
+extension TimerSettingView{
     func secondsToHMS(_ seconds: Int) -> String{
         return "\(seconds / 3600)시간 \((seconds % 3600) / 60)분 \((seconds % 3600) % 60)초"
     }
@@ -104,16 +121,17 @@ extension ContentView{
     func totalSec(_ hours: Int, _ minutes: Int, _ seconds: Int) -> Int{
         return hourToSec(hours) + minuteToSec(minutes) + seconds
     }
-    func totalTime() -> String{
+    
+    func totalTime()-> Int{
         let wo = totalSec(0, WOmin, WOsec)
         let rst = totalSec(0, RSTmin, RSTsec)
         let total = (wo + rst) * sets
-        return secondsToHMS(total)
+        return total
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct TimerSettingView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TimerSettingView(start: .constant(false))
     }
 }

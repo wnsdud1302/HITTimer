@@ -5,13 +5,15 @@
 //  Created by 박준영 on 2023/08/11.
 //
 
-import Foundation
+import SwiftUI
 import ActivityKit
 import Combine
 
 class TimerLiveActivity: ObservableObject{
     
-    let intervaltimer = intervalTimer.shared
+    static let shared = TimerLiveActivity()
+    
+    var intervaltimer = IntervalTimer.shared
     
     private var cancellable: Set<AnyCancellable> = Set()
     
@@ -27,7 +29,7 @@ class TimerLiveActivity: ObservableObject{
         do{
             activity = try Activity.request(attributes: attribute, content: state)
             } catch {
-            print(error)
+            //print(error)
         }
     }
     

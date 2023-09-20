@@ -8,16 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @ObservedObject var intervaltimer = intervalTimer.shared
-    @State var time = 0
+    @EnvironmentObject var workoutManager: WorkoutManager
     var body: some View {
-        TimeEditView()
+        Text("hello world!")
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview{
+    ContentView()
 }

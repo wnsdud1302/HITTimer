@@ -8,16 +8,11 @@
 import Foundation
 import Combine
 
-typealias timeRemain = AnyPublisher<Int, Never>
 
 
-class timer: ObservableObject{
+class IntervalTimer: ObservableObject{
     
-}
-
-
-class intervalTimer: ObservableObject{
-    static let shared = intervalTimer()
+    static let shared = IntervalTimer()
     
     var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -27,7 +22,7 @@ class intervalTimer: ObservableObject{
     
     private var cancellable: Set<AnyCancellable> = Set()
 
-    func addTimers(_ wo: Int, rst: Int, _ sets: Int){
+    func addTimers(_ wo: Int,_ rst: Int, _ sets: Int){
         
         for _ in 0..<sets{
             timers.append(wo)
@@ -68,9 +63,9 @@ class intervalTimer: ObservableObject{
     }
 }
 
-extension intervalTimer{
+extension IntervalTimer{
     
     func secondsToHMS(_ seconds: Int) -> String{
-        return "\(seconds / 3600)시간 \((seconds % 3600) / 60)분 \((seconds % 3600) % 60)초"
+        return "\((seconds % 3600) / 60)분 \((seconds % 3600) % 60)초"
     }
 }
