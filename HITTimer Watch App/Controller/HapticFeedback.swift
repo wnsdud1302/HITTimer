@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import WatchKit
+
+class HapticFeedback: ObservableObject{
+    static let shared = HapticFeedback()
+    
+    func sendFeedBack(_ type: WKHapticType){
+        WKInterfaceDevice.current().play(type)
+    }
+}

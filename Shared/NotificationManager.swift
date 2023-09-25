@@ -8,12 +8,14 @@
 import Foundation
 import UserNotifications
 
-class NotificationManager: ObservableObject{
+class NotificationManager:NSObject, ObservableObject{
     static let shared = NotificationManager()
+    
+    let notificationCenter = UNUserNotificationCenter.current()
     
     func requestAuthorization() {
             let options: UNAuthorizationOptions = [.alert, .sound, .badge]
-            UNUserNotificationCenter.current().requestAuthorization(options: options) { (success, error) in
+            notificationCenter.requestAuthorization(options: options) { (success, error) in
                 if let error = error {
                     print(error.localizedDescription)
                 } else {
@@ -21,4 +23,14 @@ class NotificationManager: ObservableObject{
                 }
             }
         }
+#if os(iOS)
+    func sendNotification(when time: Int){
+        let content = UNNotificationContent()
+    }
+#endif
+}
+
+
+extension NotificationManager: UNUserNotificationCenterDelegate{
+    
 }

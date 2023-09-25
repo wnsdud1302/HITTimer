@@ -14,7 +14,7 @@ struct HITTimer_Watch_AppApp: App {
     @StateObject private var workoutManager = WorkoutManager()
     @StateObject private var intervaltimer = IntervalTimer()
     @StateObject private var wcmanager = WatchConnectManager()
-    @StateObject private var datamanager = DataManager()
+    @StateObject private var datamanager = DataManager.shared
     
     @Environment(\.scenePhase) private var newPhase
     
@@ -23,17 +23,16 @@ struct HITTimer_Watch_AppApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(workoutManager)
-                .environmentObject(intervaltimer)
-                .onChange(of: newPhase){ newPhase in
-                    switch newPhase {
-                    case .background : print("background")
-                    case .inactive : print("inactive")
-                    default: break
-                    }
+            NavigationStack{
+                TimerListView()
                 }
+                .sheet(isPresented: $workoutManager.showingSummaryView, content: {
+                    SummaryView()
+                })
         }
+        .environmentObject(workoutManager)
+        .environmentObject(intervaltimer)
+        .environmentObject(datamanager)
         .modelContainer(datamanager.container!)
     }
 }

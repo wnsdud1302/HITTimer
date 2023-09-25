@@ -15,9 +15,7 @@ class AudioPlayer: ObservableObject{
     static let shared = AudioPlayer()
     
     private let session: AVAudioSession?
-    private let tts: AVSpeechSynthesizer?
     private var player: AVPlayer?
-    private var utterance: AVSpeechUtterance?
     
     
     @Published var time = 0.0
@@ -35,17 +33,16 @@ class AudioPlayer: ObservableObject{
         } catch {
             print(error)
         }
+        print("avaudio session start")
         self.session = session
-        tts = AVSpeechSynthesizer()
-        utterance = AVSpeechUtterance(string: "안녕하세요")
     }
     
-    func makeCountDown(_ count: String){
-        let utterance = AVSpeechUtterance(string: count)
-        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
-        tts?.speak(utterance)
-        tts?.usesApplicationAudioSession = true
-    }
+//    func makeCountDown(_ count: String){
+//        let utterance = AVSpeechUtterance(string: count)
+//        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+//        tts?.speak(utterance)
+//        tts?.usesApplicationAudioSession = true
+//    }
     
     func setSession(){
         do{
@@ -63,7 +60,6 @@ class AudioPlayer: ObservableObject{
         }
     }
     
-#if os(iOS)
     func makePlayer(){
         self.player = AVPlayer(url: URL(filePath:Bundle.main.path(forResource: "sample", ofType: "mp3")!))
         player?.volume = 0.2
@@ -122,11 +118,4 @@ class AudioPlayer: ObservableObject{
         let newasset = AVPlayerItem(asset: composition)        
         return newasset
     }
-#endif
 }
-
-#if os(watchOS)
-extension AudioPlayer {
-    
-}
-#endif

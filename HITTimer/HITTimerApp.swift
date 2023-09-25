@@ -19,6 +19,7 @@ struct HITTimerApp: App {
     @StateObject var datamanager = DataManager.shared
     @StateObject var intervaltimer = IntervalTimer.shared
     @StateObject var wcmanager = WatchConnectManager()
+    @StateObject var player = AudioPlayer.shared
     
     
         
@@ -36,12 +37,12 @@ struct HITTimerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeView()
-                .environmentObject(datamanager)
-                .environmentObject(intervaltimer)
-                .environmentObject(wcmanager)
+                HomeView()
+                    .environmentObject(datamanager)
+                    .environmentObject(intervaltimer)
+                    .environmentObject(wcmanager)
+                    .environmentObject(player)
         }
         .modelContainer(datamanager.container!)
     }
-    
 }

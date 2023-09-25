@@ -19,14 +19,16 @@ struct TimerSavedView: View {
     
     @Binding var start: Bool
     
+    @Binding var totalTime: Int
+    
+    @State var tapCell = false
+    
     var body: some View {
         ScrollView{
             LazyVStack{
                 ForEach(timerdatas){ td in
+                    
                     TimerCell(timerdata: td)
-                        .frame(width: 350, height: 120)
-                        .background(Color.random())
-                        .clipShape(.rect(cornerRadius: 15))
                         .addFullSwipeAction(swipeColor: .clear, swipeRole: .destructive) {
                             Leading{
                                 Text("new")
@@ -48,13 +50,12 @@ struct TimerSavedView: View {
                             datamanager.context?.delete(td)
                         }
                         .onTapGesture{
+                            totalTime = td.totaltime
                         intervaltimer.addTimers(td.wotime, td.rstime, td.sets)
                         start = true
                     }
-                        .transition(.push(from: .trailing))
                 }// foreach
             }
-            .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/, value: timerdatas)
         }//List
     }// body
 }
@@ -96,6 +97,10 @@ struct TimerCell: View {
             }
             .ignoresSafeArea(edges: .all)
         }
+        .frame(width: 350, height: 120)
+        .background(Color.black.opacity(0.1))
+        .background(Color.random())
+        .clipShape(.rect(cornerRadius: 15))
     }
 }
 
@@ -119,8 +124,4 @@ extension TimerCell{
     func totalSec(_ hours: Int, _ minutes: Int, _ seconds: Int) -> Int{
         return hourToSec(hours) + minuteToSec(minutes) + seconds
     }
-}
-
-#Preview {
-    TimerSavedView(start: .constant(false))
 }

@@ -19,6 +19,12 @@ struct HomeView: View {
     var body: some View {
         NavigationStack{
             TabView{
+                //SummaryView()
+//                    .tabItem {
+//                        Image(systemName: "figure.walk.circle")
+//                            .foregroundStyle(.blue)
+//                        Text("summary")
+//                    }
                 TimerSettingView(start: $start, totalTime: $totaltime)
                     .tabItem {
                         Image(systemName: "timer")

@@ -7,27 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C16F3DC2A85CE5700299EA8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9BC4B02A85274B001EDA39 /* WidgetKit.framework */; };
-		9C16F3DD2A85CE5700299EA8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9BC4B22A85274B001EDA39 /* SwiftUI.framework */; };
-		9C16F3E02A85CE5700299EA8 /* HITTimerWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C16F3DF2A85CE5700299EA8 /* HITTimerWidgetBundle.swift */; };
-		9C16F3E22A85CE5700299EA8 /* HITTimerWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C16F3E12A85CE5700299EA8 /* HITTimerWidgetLiveActivity.swift */; };
-		9C16F3E42A85CE5700299EA8 /* HITTimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C16F3E32A85CE5700299EA8 /* HITTimerWidget.swift */; };
-		9C16F3E62A85CE5900299EA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C16F3E52A85CE5900299EA8 /* Assets.xcassets */; };
-		9C16F3EA2A85CE5900299EA8 /* HITTimerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9C16F3DB2A85CE5700299EA8 /* HITTimerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9C16F4692A85D82B00299EA8 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C16F4682A85D82B00299EA8 /* IntervalTimer.swift */; };
 		9C16F46D2A85D84A00299EA8 /* TimerEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C16F46C2A85D84A00299EA8 /* TimerEditView.swift */; };
-		9C26E2952AB8DAA100C30AFD /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C16F4682A85D82B00299EA8 /* IntervalTimer.swift */; };
 		9C26E29A2AB8DBA100C30AFD /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C26E2982AB8DAFE00C30AFD /* WorkoutManager.swift */; };
-		9C4B6CAD2ABA244300C60267 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B6CAC2ABA244300C60267 /* StartView.swift */; };
+		9C4B6CAD2ABA244300C60267 /* SelectWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B6CAC2ABA244300C60267 /* SelectWorkoutView.swift */; };
 		9C4B6CB02ABB1BBF00C60267 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B6CAF2ABB1BBF00C60267 /* HomeView.swift */; };
-		9C4B6CF62ABB3C3000C60267 /* WatchConnectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B6CF52ABB3C3000C60267 /* WatchConnectManager.swift */; };
 		9C4B6CF92ABB522000C60267 /* TimerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B6CF82ABB522000C60267 /* TimerData.swift */; };
 		9C4B6CFA2ABB522000C60267 /* TimerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B6CF82ABB522000C60267 /* TimerData.swift */; };
 		9C4B6CFC2ABB52DD00C60267 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B6CFB2ABB52DD00C60267 /* DataManager.swift */; };
 		9C4B6CFD2ABB52DD00C60267 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B6CFB2ABB52DD00C60267 /* DataManager.swift */; };
 		9C4B6CFF2ABB578000C60267 /* TimerSavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B6CFE2ABB578000C60267 /* TimerSavedView.swift */; };
 		9C4B6D022ABB64DE00C60267 /* WatchConnectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B6CF52ABB3C3000C60267 /* WatchConnectManager.swift */; };
-		9C4B6D032ABB65B600C60267 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C16F4682A85D82B00299EA8 /* IntervalTimer.swift */; };
 		9C4B6D062ABB7C3200C60267 /* SwipeActions in Frameworks */ = {isa = PBXBuildFile; productRef = 9C4B6D052ABB7C3200C60267 /* SwipeActions */; };
 		9C59C47E2A834127000ACB45 /* HITTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C59C47D2A834127000ACB45 /* HITTimerApp.swift */; };
 		9C59C4802A834127000ACB45 /* TimerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C59C47F2A834127000ACB45 /* TimerSettingView.swift */; };
@@ -35,30 +25,33 @@
 		9C59C4852A834128000ACB45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C59C4842A834128000ACB45 /* Preview Assets.xcassets */; };
 		9C59C48B2A834128000ACB45 /* HITTimer Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9C59C48A2A834128000ACB45 /* HITTimer Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9C59C4902A834128000ACB45 /* HITTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C59C48F2A834128000ACB45 /* HITTimerApp.swift */; };
-		9C59C4922A834128000ACB45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C59C4912A834128000ACB45 /* ContentView.swift */; };
 		9C59C4942A834129000ACB45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C59C4932A834129000ACB45 /* Assets.xcassets */; };
 		9C59C4972A834129000ACB45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C59C4962A834129000ACB45 /* Preview Assets.xcassets */; };
 		9C59C4A42A834155000ACB45 /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C59C4A22A834155000ACB45 /* TimePickerView.swift */; };
-		9C964EA52A8603FC000CA14E /* TimerLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C964EA42A8603FC000CA14E /* TimerLiveActivity.swift */; };
-		9C964EA72A8603FC000CA14E /* TimerLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C964EA42A8603FC000CA14E /* TimerLiveActivity.swift */; };
-		9C964EA82A860675000CA14E /* HITTimerWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C16F3E12A85CE5700299EA8 /* HITTimerWidgetLiveActivity.swift */; };
-		9C964EA92A86067C000CA14E /* HITTimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C16F3E32A85CE5700299EA8 /* HITTimerWidget.swift */; };
+		9C72796E2ABBA6B900A34BC1 /* MetricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C72796D2ABBA6B900A34BC1 /* MetricView.swift */; };
+		9C7279702ABBACF700A34BC1 /* SessionPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C72796F2ABBACF700A34BC1 /* SessionPagingView.swift */; };
+		9C7279742ABBADA200A34BC1 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7279732ABBADA200A34BC1 /* ControlView.swift */; };
+		9C7279762ABBB11100A34BC1 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7279752ABBB11100A34BC1 /* SummaryView.swift */; };
+		9C7279782ABBB15000A34BC1 /* ActivityRingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7279772ABBB15000A34BC1 /* ActivityRingsView.swift */; };
+		9C7279892ABCBDE500A34BC1 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7279882ABCBDE500A34BC1 /* NotificationManager.swift */; };
+		9C8C29452ABE17CC00C4A2C5 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7279882ABCBDE500A34BC1 /* NotificationManager.swift */; };
+		9C8C29472ABE182C00C4A2C5 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8C29462ABE182C00C4A2C5 /* AudioPlayer.swift */; };
+		9C8C29562ABECBC800C4A2C5 /* 1hour.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C8C29552ABECBC800C4A2C5 /* 1hour.mp3 */; };
+		9C8C295A2ABF1B9700C4A2C5 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8C29592ABF1B9700C4A2C5 /* IntervalTimer.swift */; };
+		9C8C295C2ABF306900C4A2C5 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8C295B2ABF306900C4A2C5 /* TimeView.swift */; };
+		9C8EE3E72AC01B6400FE6F32 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EE3E62AC01B6400FE6F32 /* HapticFeedback.swift */; };
+		9C8EE3E92AC0258D00FE6F32 /* WatchConnectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B6CF52ABB3C3000C60267 /* WatchConnectManager.swift */; };
+		9C8EE3EA2AC02DE800FE6F32 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8C29462ABE182C00C4A2C5 /* AudioPlayer.swift */; };
+		9C8EE3EB2AC03C8E00FE6F32 /* 1hour.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C8C29552ABECBC800C4A2C5 /* 1hour.mp3 */; };
+		9C8EE3ED2AC03FE700FE6F32 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EE3EC2AC03FE700FE6F32 /* SummaryView.swift */; };
+		9C8EE3F32AC0835200FE6F32 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C26E2982AB8DAFE00C30AFD /* WorkoutManager.swift */; };
 		9C9BC4A72A84AD9E001EDA39 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9BC4A62A84AD9E001EDA39 /* TimerView.swift */; };
 		9C9BC4A92A8525C1001EDA39 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9BC4A82A8525C1001EDA39 /* HapticFeedback.swift */; };
 		9CB02FC12A8371470075CF99 /* SetEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB02FC02A8371470075CF99 /* SetEditView.swift */; };
 		9CC6987B2ABB879900FA4E79 /* TimerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6987A2ABB879900FA4E79 /* TimerListView.swift */; };
-		9CDF6CCA2A8611F300E3A074 /* HITTimerLiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF6CC92A8611F300E3A074 /* HITTimerLiveActivityView.swift */; };
-		9CDF6CCC2A8616E700E3A074 /* HITTimerLiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF6CC92A8611F300E3A074 /* HITTimerLiveActivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9C16F3E82A85CE5900299EA8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9C59C4722A834127000ACB45 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9C16F3DA2A85CE5700299EA8;
-			remoteInfo = HITTimerWidgetExtension;
-		};
 		9C59C48C2A834128000ACB45 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9C59C4722A834127000ACB45 /* Project object */;
@@ -86,7 +79,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				9C16F3EA2A85CE5900299EA8 /* HITTimerWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,17 +86,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9C16F3DB2A85CE5700299EA8 /* HITTimerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HITTimerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C16F3DF2A85CE5700299EA8 /* HITTimerWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HITTimerWidgetBundle.swift; sourceTree = "<group>"; };
-		9C16F3E12A85CE5700299EA8 /* HITTimerWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HITTimerWidgetLiveActivity.swift; sourceTree = "<group>"; };
-		9C16F3E32A85CE5700299EA8 /* HITTimerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HITTimerWidget.swift; sourceTree = "<group>"; };
-		9C16F3E52A85CE5900299EA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9C16F3E72A85CE5900299EA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C16F4682A85D82B00299EA8 /* IntervalTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalTimer.swift; sourceTree = "<group>"; };
 		9C16F46C2A85D84A00299EA8 /* TimerEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerEditView.swift; sourceTree = "<group>"; };
 		9C26E2982AB8DAFE00C30AFD /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		9C4B6CAB2ABA10D600C60267 /* HITTimer Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HITTimer Watch App.entitlements"; sourceTree = "<group>"; };
-		9C4B6CAC2ABA244300C60267 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		9C4B6CAC2ABA244300C60267 /* SelectWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWorkoutView.swift; sourceTree = "<group>"; };
 		9C4B6CAF2ABB1BBF00C60267 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9C4B6CF52ABB3C3000C60267 /* WatchConnectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectManager.swift; sourceTree = "<group>"; };
 		9C4B6CF82ABB522000C60267 /* TimerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerData.swift; sourceTree = "<group>"; };
@@ -117,11 +103,21 @@
 		9C59C4842A834128000ACB45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9C59C48A2A834128000ACB45 /* HITTimer Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HITTimer Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C59C48F2A834128000ACB45 /* HITTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HITTimerApp.swift; sourceTree = "<group>"; };
-		9C59C4912A834128000ACB45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9C59C4932A834129000ACB45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C59C4962A834129000ACB45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9C59C4A22A834155000ACB45 /* TimePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
-		9C964EA42A8603FC000CA14E /* TimerLiveActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerLiveActivity.swift; sourceTree = "<group>"; };
+		9C72796D2ABBA6B900A34BC1 /* MetricView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricView.swift; sourceTree = "<group>"; };
+		9C72796F2ABBACF700A34BC1 /* SessionPagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPagingView.swift; sourceTree = "<group>"; };
+		9C7279732ABBADA200A34BC1 /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
+		9C7279752ABBB11100A34BC1 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		9C7279772ABBB15000A34BC1 /* ActivityRingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityRingsView.swift; sourceTree = "<group>"; };
+		9C7279882ABCBDE500A34BC1 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		9C8C29462ABE182C00C4A2C5 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		9C8C29552ABECBC800C4A2C5 /* 1hour.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1hour.mp3; sourceTree = "<group>"; };
+		9C8C29592ABF1B9700C4A2C5 /* IntervalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimer.swift; sourceTree = "<group>"; };
+		9C8C295B2ABF306900C4A2C5 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		9C8EE3E62AC01B6400FE6F32 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
+		9C8EE3EC2AC03FE700FE6F32 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		9C9BC4A62A84AD9E001EDA39 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		9C9BC4A82A8525C1001EDA39 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		9C9BC4B02A85274B001EDA39 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -129,21 +125,11 @@
 		9CB02FC02A8371470075CF99 /* SetEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEditView.swift; sourceTree = "<group>"; };
 		9CC6987A2ABB879900FA4E79 /* TimerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListView.swift; sourceTree = "<group>"; };
 		9CCE468B2A8A522200195CCC /* HITTimer-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "HITTimer-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
-		9CDF6CC92A8611F300E3A074 /* HITTimerLiveActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HITTimerLiveActivityView.swift; sourceTree = "<group>"; };
 		9CDF6CCE2A88165000E3A074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9CDF6CCF2A88175600E3A074 /* HITTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HITTimer.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9C16F3D82A85CE5700299EA8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9C16F3DD2A85CE5700299EA8 /* SwiftUI.framework in Frameworks */,
-				9C16F3DC2A85CE5700299EA8 /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9C59C4772A834127000ACB45 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,25 +148,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9C16F3DE2A85CE5700299EA8 /* HITTimerWidget */ = {
-			isa = PBXGroup;
-			children = (
-				9C16F3DF2A85CE5700299EA8 /* HITTimerWidgetBundle.swift */,
-				9C16F3E12A85CE5700299EA8 /* HITTimerWidgetLiveActivity.swift */,
-				9CDF6CC92A8611F300E3A074 /* HITTimerLiveActivityView.swift */,
-				9C16F3E32A85CE5700299EA8 /* HITTimerWidget.swift */,
-				9C16F3E52A85CE5900299EA8 /* Assets.xcassets */,
-				9C16F3E72A85CE5900299EA8 /* Info.plist */,
-			);
-			path = HITTimerWidget;
-			sourceTree = "<group>";
-		};
 		9C26E2962AB8DAB100C30AFD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9C8EE3EE2AC0756500FE6F32 /* MainView */,
 				9C4B6CAE2ABB1BA000C60267 /* TimerView */,
 				9C59C4A12A834131000ACB45 /* EditerView */,
-				9C4B6CAF2ABB1BBF00C60267 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,8 +161,8 @@
 		9C26E2972AB8DAE400C30AFD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9C4B6CAC2ABA244300C60267 /* StartView.swift */,
-				9CC6987A2ABB879900FA4E79 /* TimerListView.swift */,
+				9C7279722ABBAD0E00A34BC1 /* SelectView */,
+				9C7279712ABBACFF00A34BC1 /* SessionView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,10 +180,9 @@
 		9C59C4712A834127000ACB45 = {
 			isa = PBXGroup;
 			children = (
-				9C59C4A62A834163000ACB45 /* TimerModel */,
+				9C59C4A62A834163000ACB45 /* Shared */,
 				9C59C47C2A834127000ACB45 /* HITTimer */,
 				9C59C48E2A834128000ACB45 /* HITTimer Watch App */,
-				9C16F3DE2A85CE5700299EA8 /* HITTimerWidget */,
 				9C9BC4AF2A85274B001EDA39 /* Frameworks */,
 				9C59C47B2A834127000ACB45 /* Products */,
 			);
@@ -221,7 +193,6 @@
 			children = (
 				9C59C47A2A834127000ACB45 /* HITTimer.app */,
 				9C59C48A2A834128000ACB45 /* HITTimer Watch App.app */,
-				9C16F3DB2A85CE5700299EA8 /* HITTimerWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -229,11 +200,11 @@
 		9C59C47C2A834127000ACB45 /* HITTimer */ = {
 			isa = PBXGroup;
 			children = (
+				9C8C29572ABF19AF00C4A2C5 /* Controller */,
 				9C26E2962AB8DAB100C30AFD /* View */,
 				9CDF6CCF2A88175600E3A074 /* HITTimer.entitlements */,
 				9CDF6CCE2A88165000E3A074 /* Info.plist */,
 				9C59C47D2A834127000ACB45 /* HITTimerApp.swift */,
-				9C9BC4A82A8525C1001EDA39 /* HapticFeedback.swift */,
 				9C59C4812A834128000ACB45 /* Assets.xcassets */,
 				9C59C4832A834128000ACB45 /* Preview Content */,
 			);
@@ -251,11 +222,11 @@
 		9C59C48E2A834128000ACB45 /* HITTimer Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				9C4B6CAB2ABA10D600C60267 /* HITTimer Watch App.entitlements */,
+				9C8C29582ABF19E300C4A2C5 /* Controller */,
 				9C26E2972AB8DAE400C30AFD /* View */,
 				9CCE468B2A8A522200195CCC /* HITTimer-Watch-App-Info.plist */,
+				9C4B6CAB2ABA10D600C60267 /* HITTimer Watch App.entitlements */,
 				9C59C48F2A834128000ACB45 /* HITTimerApp.swift */,
-				9C59C4912A834128000ACB45 /* ContentView.swift */,
 				9C59C4932A834129000ACB45 /* Assets.xcassets */,
 				9C59C4952A834129000ACB45 /* Preview Content */,
 			);
@@ -279,17 +250,67 @@
 			path = EditerView;
 			sourceTree = "<group>";
 		};
-		9C59C4A62A834163000ACB45 /* TimerModel */ = {
+		9C59C4A62A834163000ACB45 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				9C4B6CF82ABB522000C60267 /* TimerData.swift */,
+				9C4B6CFB2ABB52DD00C60267 /* DataManager.swift */,
+				9C26E2982AB8DAFE00C30AFD /* WorkoutManager.swift */,
+				9C7279882ABCBDE500A34BC1 /* NotificationManager.swift */,
+				9C8C29462ABE182C00C4A2C5 /* AudioPlayer.swift */,
+				9C8C29552ABECBC800C4A2C5 /* 1hour.mp3 */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		9C7279712ABBACFF00A34BC1 /* SessionView */ = {
+			isa = PBXGroup;
+			children = (
+				9C7279772ABBB15000A34BC1 /* ActivityRingsView.swift */,
+				9C7279732ABBADA200A34BC1 /* ControlView.swift */,
+				9C8C295B2ABF306900C4A2C5 /* TimeView.swift */,
+				9C72796D2ABBA6B900A34BC1 /* MetricView.swift */,
+				9C72796F2ABBACF700A34BC1 /* SessionPagingView.swift */,
+				9C7279752ABBB11100A34BC1 /* SummaryView.swift */,
+			);
+			path = SessionView;
+			sourceTree = "<group>";
+		};
+		9C7279722ABBAD0E00A34BC1 /* SelectView */ = {
+			isa = PBXGroup;
+			children = (
+				9C4B6CAC2ABA244300C60267 /* SelectWorkoutView.swift */,
+				9CC6987A2ABB879900FA4E79 /* TimerListView.swift */,
+			);
+			path = SelectView;
+			sourceTree = "<group>";
+		};
+		9C8C29572ABF19AF00C4A2C5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				9C16F4682A85D82B00299EA8 /* IntervalTimer.swift */,
-				9C964EA42A8603FC000CA14E /* TimerLiveActivity.swift */,
-				9C26E2982AB8DAFE00C30AFD /* WorkoutManager.swift */,
+				9C9BC4A82A8525C1001EDA39 /* HapticFeedback.swift */,
 				9C4B6CF52ABB3C3000C60267 /* WatchConnectManager.swift */,
-				9C4B6CF82ABB522000C60267 /* TimerData.swift */,
-				9C4B6CFB2ABB52DD00C60267 /* DataManager.swift */,
 			);
-			path = TimerModel;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9C8C29582ABF19E300C4A2C5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9C8C29592ABF1B9700C4A2C5 /* IntervalTimer.swift */,
+				9C8EE3E62AC01B6400FE6F32 /* HapticFeedback.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9C8EE3EE2AC0756500FE6F32 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				9C8EE3EC2AC03FE700FE6F32 /* SummaryView.swift */,
+				9C4B6CAF2ABB1BBF00C60267 /* HomeView.swift */,
+			);
+			path = MainView;
 			sourceTree = "<group>";
 		};
 		9C9BC4AF2A85274B001EDA39 /* Frameworks */ = {
@@ -313,23 +334,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9C16F3DA2A85CE5700299EA8 /* HITTimerWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9C16F3EB2A85CE5900299EA8 /* Build configuration list for PBXNativeTarget "HITTimerWidgetExtension" */;
-			buildPhases = (
-				9C16F3D72A85CE5700299EA8 /* Sources */,
-				9C16F3D82A85CE5700299EA8 /* Frameworks */,
-				9C16F3D92A85CE5700299EA8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = HITTimerWidgetExtension;
-			productName = HITTimerWidgetExtension;
-			productReference = 9C16F3DB2A85CE5700299EA8 /* HITTimerWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		9C59C4792A834127000ACB45 /* HITTimer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C59C49E2A834129000ACB45 /* Build configuration list for PBXNativeTarget "HITTimer" */;
@@ -344,7 +348,6 @@
 			);
 			dependencies = (
 				9C59C48D2A834128000ACB45 /* PBXTargetDependency */,
-				9C16F3E92A85CE5900299EA8 /* PBXTargetDependency */,
 			);
 			name = HITTimer;
 			packageProductDependencies = (
@@ -381,9 +384,6 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					9C16F3DA2A85CE5700299EA8 = {
-						CreatedOnToolsVersion = 14.3.1;
-					};
 					9C59C4792A834127000ACB45 = {
 						CreatedOnToolsVersion = 14.0;
 					};
@@ -410,25 +410,17 @@
 			targets = (
 				9C59C4792A834127000ACB45 /* HITTimer */,
 				9C59C4892A834128000ACB45 /* HITTimer Watch App */,
-				9C16F3DA2A85CE5700299EA8 /* HITTimerWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9C16F3D92A85CE5700299EA8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9C16F3E62A85CE5900299EA8 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9C59C4782A834127000ACB45 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9C59C4852A834128000ACB45 /* Preview Assets.xcassets in Resources */,
+				9C8C29562ABECBC800C4A2C5 /* 1hour.mp3 in Resources */,
 				9C59C4822A834128000ACB45 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,46 +431,34 @@
 			files = (
 				9C59C4972A834129000ACB45 /* Preview Assets.xcassets in Resources */,
 				9C59C4942A834129000ACB45 /* Assets.xcassets in Resources */,
+				9C8EE3EB2AC03C8E00FE6F32 /* 1hour.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9C16F3D72A85CE5700299EA8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9C16F3E22A85CE5700299EA8 /* HITTimerWidgetLiveActivity.swift in Sources */,
-				9C964EA72A8603FC000CA14E /* TimerLiveActivity.swift in Sources */,
-				9C4B6D032ABB65B600C60267 /* IntervalTimer.swift in Sources */,
-				9C16F3E42A85CE5700299EA8 /* HITTimerWidget.swift in Sources */,
-				9C16F3E02A85CE5700299EA8 /* HITTimerWidgetBundle.swift in Sources */,
-				9CDF6CCC2A8616E700E3A074 /* HITTimerLiveActivityView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9C59C4762A834127000ACB45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9C16F46D2A85D84A00299EA8 /* TimerEditView.swift in Sources */,
 				9C4B6CFC2ABB52DD00C60267 /* DataManager.swift in Sources */,
-				9C964EA92A86067C000CA14E /* HITTimerWidget.swift in Sources */,
 				9C4B6CB02ABB1BBF00C60267 /* HomeView.swift in Sources */,
 				9C4B6CF92ABB522000C60267 /* TimerData.swift in Sources */,
 				9CB02FC12A8371470075CF99 /* SetEditView.swift in Sources */,
+				9C8EE3F32AC0835200FE6F32 /* WorkoutManager.swift in Sources */,
+				9C8EE3ED2AC03FE700FE6F32 /* SummaryView.swift in Sources */,
 				9C59C4802A834127000ACB45 /* TimerSettingView.swift in Sources */,
 				9C59C4A42A834155000ACB45 /* TimePickerView.swift in Sources */,
-				9C964EA82A860675000CA14E /* HITTimerWidgetLiveActivity.swift in Sources */,
 				9C9BC4A92A8525C1001EDA39 /* HapticFeedback.swift in Sources */,
 				9C4B6CFF2ABB578000C60267 /* TimerSavedView.swift in Sources */,
 				9C4B6D022ABB64DE00C60267 /* WatchConnectManager.swift in Sources */,
+				9C8C29472ABE182C00C4A2C5 /* AudioPlayer.swift in Sources */,
 				9C9BC4A72A84AD9E001EDA39 /* TimerView.swift in Sources */,
-				9C964EA52A8603FC000CA14E /* TimerLiveActivity.swift in Sources */,
 				9C16F4692A85D82B00299EA8 /* IntervalTimer.swift in Sources */,
+				9C7279892ABCBDE500A34BC1 /* NotificationManager.swift in Sources */,
 				9C59C47E2A834127000ACB45 /* HITTimerApp.swift in Sources */,
-				9CDF6CCA2A8611F300E3A074 /* HITTimerLiveActivityView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,26 +466,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C26E2952AB8DAA100C30AFD /* IntervalTimer.swift in Sources */,
-				9C4B6CF62ABB3C3000C60267 /* WatchConnectManager.swift in Sources */,
+				9C7279762ABBB11100A34BC1 /* SummaryView.swift in Sources */,
+				9C7279702ABBACF700A34BC1 /* SessionPagingView.swift in Sources */,
+				9C8C295A2ABF1B9700C4A2C5 /* IntervalTimer.swift in Sources */,
 				9CC6987B2ABB879900FA4E79 /* TimerListView.swift in Sources */,
+				9C8C29452ABE17CC00C4A2C5 /* NotificationManager.swift in Sources */,
+				9C7279742ABBADA200A34BC1 /* ControlView.swift in Sources */,
 				9C26E29A2AB8DBA100C30AFD /* WorkoutManager.swift in Sources */,
-				9C4B6CAD2ABA244300C60267 /* StartView.swift in Sources */,
-				9C59C4922A834128000ACB45 /* ContentView.swift in Sources */,
+				9C72796E2ABBA6B900A34BC1 /* MetricView.swift in Sources */,
+				9C4B6CAD2ABA244300C60267 /* SelectWorkoutView.swift in Sources */,
+				9C7279782ABBB15000A34BC1 /* ActivityRingsView.swift in Sources */,
+				9C8EE3EA2AC02DE800FE6F32 /* AudioPlayer.swift in Sources */,
+				9C8EE3E92AC0258D00FE6F32 /* WatchConnectManager.swift in Sources */,
+				9C8C295C2ABF306900C4A2C5 /* TimeView.swift in Sources */,
 				9C59C4902A834128000ACB45 /* HITTimerApp.swift in Sources */,
 				9C4B6CFD2ABB52DD00C60267 /* DataManager.swift in Sources */,
 				9C4B6CFA2ABB522000C60267 /* TimerData.swift in Sources */,
+				9C8EE3E72AC01B6400FE6F32 /* HapticFeedback.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9C16F3E92A85CE5900299EA8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9C16F3DA2A85CE5700299EA8 /* HITTimerWidgetExtension */;
-			targetProxy = 9C16F3E82A85CE5900299EA8 /* PBXContainerItemProxy */;
-		};
 		9C59C48D2A834128000ACB45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9C59C4892A834128000ACB45 /* HITTimer Watch App */;
@@ -514,65 +497,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		9C16F3EC2A85CE5900299EA8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YKGE292M6D;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HITTimerWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = HITTimerWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = junyeong.HITTimer.HITTimerWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		9C16F3ED2A85CE5900299EA8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YKGE292M6D;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HITTimerWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = HITTimerWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = junyeong.HITTimer.HITTimerWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		9C59C4982A834129000ACB45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -700,6 +624,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HITTimer-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = HITTimer;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Your workout related data will be used to display your saved workouts in MyWorkouts.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Workouts tracked by MyWorkouts on Apple Watch will be saved to HealthKit.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = junyeong.HITTimer;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -732,6 +658,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HITTimer-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = HITTimer;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Your workout related data will be used to display your saved workouts in MyWorkouts.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Workouts tracked by MyWorkouts on Apple Watch will be saved to HealthKit.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = junyeong.HITTimer;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -767,6 +695,9 @@
 				INFOPLIST_FILE = HITTimer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HITTimer;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "get health data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "get heatlh data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "get health data";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -808,6 +739,9 @@
 				INFOPLIST_FILE = HITTimer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HITTimer;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "get health data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "get heatlh data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "get health data";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -837,15 +771,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9C16F3EB2A85CE5900299EA8 /* Build configuration list for PBXNativeTarget "HITTimerWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9C16F3EC2A85CE5900299EA8 /* Debug */,
-				9C16F3ED2A85CE5900299EA8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		9C59C4752A834127000ACB45 /* Build configuration list for PBXProject "HITTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

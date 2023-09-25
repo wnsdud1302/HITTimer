@@ -7,39 +7,82 @@
 
 import SwiftUI
 import SwiftData
+import HealthKit
 
 struct TimerListView: View {
     @EnvironmentObject var datamanager: DataManager
     @EnvironmentObject var intervaltimer: IntervalTimer
+    @EnvironmentObject var workoutManager: WorkoutManager
+    
+    @State var activityType: HKWorkoutActivityType = .running
+    @State var showSelect: Bool = false
+    @State var showSession: Bool = false
     
     @Query() private var timerdatas: [TimerData]
+    
     
     var body: some View {
         List{
             ForEach(timerdatas){ td in
-                NavigationLink(destination: StartView(timerdata: td)){
-                    TimerListCell(timerdata: td)
+                Button(action:{
+                    showSession = true
+                    intervaltimer.addTimers(td.wotime, td.rstime, td.sets)
+                }){
+                    TimerListCell(activityType: $activityType, timerdata: td)
                 }
+            }
+            .onDelete(perform: removeRow)
+            .navigationDestination(isPresented: $showSession){
+                SessionPagingView(activityType: $activityType, showView: $showSession)
             }
         }
         .listStyle(.carousel)
         .onChange(of: timerdatas){
             print(timerdatas.count)
         }
+        .onAppear{
+            workoutManager.requestAuthorization()
+        }
+    }
+}
+
+extension TimerListView {
+    func removeRow(at offset: IndexSet){
+        for i in offset{
+            datamanager.deleteData(which: timerdatas[i])
+        }
     }
 }
 
 struct TimerListCell: View {
+    @Binding var activityType: HKWorkoutActivityType
     @Bindable var timerdata: TimerData
+    @State var showselect: Bool = false
     var body: some View {
-        VStack(alignment: .leading){
-            Text("세트수: \(timerdata.sets)")
-                .font(.largeTitle)
-            Text("운동시간: \(secondsToMS(timerdata.wotime))")
-                .font(.subheadline)
-            Text("휴식시간: \(secondsToMS(timerdata.rstime))")
-                .font(.subheadline)
-            
+        HStack{
+            VStack(alignment: .leading){
+                HStack{
+                    Text("세트수: \(timerdata.sets)")
+                        .foregroundStyle(.green)
+                        .font(.system(size: 30))
+
+                     Spacer()
+                    Image(systemName: "ellipsis.circle")
+                        .font(.system(size: 20))
+                        .onTapGesture {
+                            showselect = true
+                        }
+                        .navigationDestination(isPresented: $showselect){
+                            SelectWorkoutView(activityType: $activityType, showView: $showselect)
+                        }
+                }
+                Text("운동시간: \(secondsToMS(timerdata.wotime))")
+                    .foregroundStyle(.yellow)
+                Text("휴식시간: \(secondsToMS(timerdata.rstime))")
+                    .foregroundStyle(.yellow)
+                Text("운동종류: \(activityType.name)")
+            }
+            .font(.system(.subheadline ,design: .rounded).monospacedDigit().lowercaseSmallCaps())
         }
     }
 }
@@ -66,6 +109,3 @@ extension TimerListCell{
     }
 }
 
-#Preview {
-    TimerListView()
-}

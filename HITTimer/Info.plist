@@ -2,13 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>BGTaskSchedulerPermittedIdentifiers</key>
-	<array>
-		<string>myprocessing</string>
-	</array>
+	<key>NSHealthShareUsageDescription</key>
+	<string>using for get workout data</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>using for get workout data</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>record location for worktout</string>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>processing</string>
+		<string>audio</string>
+		<string>location</string>
 	</array>
 </dict>
 </plist>

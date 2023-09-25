@@ -17,7 +17,15 @@ class IntervalTimer: ObservableObject{
     
     var timers: [Int] = []
     
-    @Published var running = false
+    @Published var running = false {
+        didSet{
+            if running == true {
+                resumeTimer()
+            } else {
+                stopTimers()
+            }
+        }
+    }
     
     @Published var endtimer: Bool = false {
         didSet{
@@ -43,20 +51,16 @@ class IntervalTimer: ObservableObject{
     }
     
     func toggleTimer(){
-        if self.running == true {
-            stopTimers()
-        } else {
-            startTimers()
-        }
+        running = !running
     }
     
     func stopTimers(){
-        self.running = false
+        AudioPlayer.shared.pause()
     }
     
     func startTimers(){
         self.running = true
-        
+        print("start timer")
         AudioPlayer.shared.getPlayer()?.addPeriodicTimeObserver(forInterval: CMTime(value: 1, timescale: 1), queue: .main){ [self] in
             if $0.seconds == .zero {
                 return
@@ -66,31 +70,22 @@ class IntervalTimer: ObservableObject{
                 endTimer()
                 return
             }
-            if timeRemain > -1{
-                timeRemain -= 1
-            }
-            if timeRemain == -1 {
+            if timeRemain <= 0{
+                HapticFeedback.shared.notification(.success)
                 timers.removeFirst()
-                timeRemain = (timers.first ?? 1)  - 1
-                
+                timeRemain = (timers.first ?? 1) - 1
+                return
             }
+            if timeRemain < 4 && timeRemain != 0{
+                HapticFeedback.shared.play(.light)
+            }
+            timeRemain -= 1
         }
-//        AudioPlayer.shared.$time.sink{ [self] _ in
-//            guard timers.first != nil else {
-//                endTimer()
-//                return
-//            }
-//            if timeRemain > -1{
-//                timeRemain -= 1
-//            }
-//            if timeRemain == -1 {
-//                timers.removeFirst()
-//                timeRemain = (timers.first ?? 1)  - 1
-//                
-//            }
-//
-//        }
-//        .store(in: &cancellable)
+
+    }
+    
+    func resumeTimer(){
+        AudioPlayer.shared.resume()
     }
     
     func endTimer(){

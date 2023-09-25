@@ -6,9 +6,12 @@
 //
 
 import Foundation
+import CoreLocation
+import MapKit
 import HealthKit
 
-class WorkoutManager: NSObject, ObservableObject{
+
+class WorkoutManager:NSObject, ObservableObject{
     
     @Published var running = false
     
@@ -19,14 +22,70 @@ class WorkoutManager: NSObject, ObservableObject{
     @Published var workout: HKWorkout?
     
     let healthStore = HKHealthStore()
-    var session: HKWorkoutSession?
+    
+#if os(iOS)
+    
+    func requestAuthorization(){
+        let typesToshare: Set<HKSampleType> = [
+            .workoutType(),
+            HKSeriesType.workoutRoute()
+        ]
+        
+        let typesToRead: Set<HKSampleType> = [
+                            .workoutType(),
+                             HKSeriesType.workoutType(),
+                             HKSeriesType.workoutRoute(),
+                             HKObjectType.quantityType(forIdentifier: .heartRate)!,
+                             HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!
+        ]
+        
+        healthStore.requestAuthorization(toShare: typesToshare, read: typesToRead) { success, error in
+        }
+    }
+    
+    func getWorkouts(completion: @escaping ([HKWorkout]?, Error?) -> Void) async {
+        let source = HKQuery.predicateForObjects(from: .default())
+        
+        let sorDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
+        
+        let query = HKSampleQuery(sampleType: .workoutType(), predicate: source, limit: HKObjectQueryNoLimit, sortDescriptors: [sorDescriptor]){ (query, samples, error) in
+            guard let samples = samples as? [HKWorkout], error == nil else {
+                completion(nil, error)
+                return
+            }
+            completion(samples, nil)
+        }
+        healthStore.execute(query)
+    }
+#endif
+    
+    
+#if os(watchOS)
     var builder: HKLiveWorkoutBuilder?
+    
+    var session: HKWorkoutSession?
     
     @Published var showingSummaryView: Bool = false {
         didSet{
             if showingSummaryView == false {
                 resetWorktout()
             }
+        }
+    }
+    
+    func requestAuthorization(){
+        let typesToshare: Set = [
+            HKQuantityType.workoutType(),
+            HKSeriesType.workoutRoute()
+        ]
+        
+        let typesToRead: Set = [
+            HKQuantityType.quantityType(forIdentifier: .heartRate)!,
+            HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
+            HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
+        ]
+        
+        healthStore.requestAuthorization(toShare: typesToshare, read: typesToRead) { success, error in
         }
     }
     
@@ -54,20 +113,6 @@ class WorkoutManager: NSObject, ObservableObject{
         print("startWorkout")
     }
     
-    func requestAuthorization(){
-        let typesToshare: Set = [
-            HKQuantityType.workoutType()
-        ]
-        
-        let typesToRead: Set = [
-            HKQuantityType.quantityType(forIdentifier: .heartRate)!,
-            HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
-            HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
-        ]
-        
-        healthStore.requestAuthorization(toShare: typesToshare, read: typesToRead) { success, error in
-        }
-    }
     
     func togglePause(){
         if running == true {
@@ -121,8 +166,11 @@ class WorkoutManager: NSObject, ObservableObject{
         heartRate = 0
         distance = 0
     }
+#endif
 }
 
+
+#if os(watchOS)
 extension WorkoutManager: HKWorkoutSessionDelegate, HKLiveWorkoutBuilderDelegate {
     func workoutSession(_ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState, from fromState: HKWorkoutSessionState, date: Date) {
         DispatchQueue.main.async {
@@ -163,4 +211,14 @@ extension WorkoutManager: HKWorkoutSessionDelegate, HKLiveWorkoutBuilderDelegate
     }
     
     
+}
+
+#endif
+
+
+extension HKWorkout: Identifiable{
+    public typealias ID = Int
+    public var id: Int {
+        return hash
+    }
 }

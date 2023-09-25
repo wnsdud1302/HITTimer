@@ -8,16 +8,24 @@
 import SwiftUI
 import HealthKit
 
-struct S: View {
+struct SelectWorkoutView: View {
     
-    @Bindable var timerdata: TimerData
+    @EnvironmentObject var workoutManager: WorkoutManager
+    @EnvironmentObject var intervalTimer: IntervalTimer
+    @Binding var activityType: HKWorkoutActivityType
+    @Binding var showView: Bool
     
     var workoutTypes: [HKWorkoutActivityType] = [.running, .walking, .traditionalStrengthTraining, .highIntensityIntervalTraining]
     
     var body: some View {
         List{
             ForEach(workoutTypes){ type in
-                
+                Button(action:{
+                    activityType = type
+                    showView = false
+                }){
+                    StartViewCell(type: type)
+                }
             }
         }
     }
@@ -42,13 +50,13 @@ extension HKWorkoutActivityType: Identifiable{
     var name: String{
         switch self {
         case .running:
-            return " Run"
+            return " 달리기"
         case .walking:
-            return "walking"
+            return "걷기"
         case .highIntensityIntervalTraining:
-            return "HIITraining"
+            return "인터벌트레이닝"
         case .traditionalStrengthTraining:
-            return "StrengthTraining"
+            return "근력운동"
         default:
             return ""
         }
@@ -70,6 +78,4 @@ extension HKWorkoutActivityType: Identifiable{
     }
 }
 
-#Preview {
-    StartView(timerdata: .init(totaltime: 0, wotime: 0, rstime: 0, sets: 0))
-}
+

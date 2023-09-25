@@ -5,6 +5,7 @@
 //  Created by 박준영 on 2023/08/10.
 //
 
+import Foundation
 import UIKit
 
 class HapticFeedback {

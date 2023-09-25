@@ -8,11 +8,34 @@
 import SwiftUI
 
 struct ControlView: View {
+    @EnvironmentObject var workoutManager: WorkoutManager
+    @EnvironmentObject var intervalTimer: IntervalTimer
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            VStack {
+                Button {
+                    workoutManager.endWorkout()
+                    intervalTimer.endTimer()
+                } label: {
+                    Image(systemName: "xmark")
+                }
+                .tint(.red)
+                .font(.title2)
+                Text("End")
+            }
+            VStack {
+                Button {
+                    workoutManager.togglePause()
+                    intervalTimer.toggleTimer()
+                } label: {
+                    Image(systemName: workoutManager.running ? "pause" : "play")
+                }
+                .tint(.yellow)
+                .font(.title2)
+                Text(workoutManager.running ? "Pause" : "Resume")
+            }
+        }
     }
 }
 
-#Preview {
-    ControlView()
-}

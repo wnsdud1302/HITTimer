@@ -10,53 +10,57 @@ import SwiftUI
 
 struct TimerView: View {
     
-    @EnvironmentObject var intervaltimer: IntervalTimer
-    @ObservedObject var liveActivity = TimerLiveActivity.shared
+    @EnvironmentObject var intervaltimer : IntervalTimer
+    @EnvironmentObject var player : AudioPlayer
+        
+    @Binding var totaltime: Int
     
-    
-    @State var timeRemain = 0
-    @State var pause = false
+    @Environment(\.dismiss) private var dismiss
     
     @Binding var start: Bool
     
     var body: some View {
         VStack{
+            Text(intervaltimer.checkType())
+                .font(.system(size: 90))
             ZStack(alignment: .leading){
                 
                 Rectangle()
                     .foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.8))
-                    .frame(width:350 * (Double((timeRemain > 0) ? timeRemain : 0) / (Double(intervaltimer.timers.first ?? 2) - 1)), height: 50)
+                    .frame(width:350 * getProgress(denominator: intervaltimer.timers.first, numerator: intervaltimer.timeRemain), height: 50)
                     .cornerRadius(15)
-                    .animation(.linear(duration: 1), value: timeRemain)
+                    .animation(.linear(duration: 1), value: intervaltimer.timeRemain)
                 
                 Rectangle()
                     .foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.8, opacity: 0.6))
                 .frame(width: 350, height: 50)
                 .cornerRadius(15)
-                
             }
                 
-            Text(intervaltimer.secondsToHMS(timeRemain))
+            Text(intervaltimer.secondsToHMS(intervaltimer.timeRemain))
                     .font(.system(size: 50))
             
             HStack{
                 Button(action: {
-                    pause = !pause
+                    intervaltimer.toggleTimer()
+                    
                 }){
                     ZStack{
                         Circle()
                             .frame(width: 80, height: 80)
                             .foregroundColor(.orange)
-                        Image(systemName: pause ? "play.fill" : "pause.fill")
+                        Image(systemName: intervaltimer.running ? "pause.fill" : "play.fill")
                             .foregroundColor(.white)
                             .font(.system(size: 50))
                     }
                 }
                 .padding(.trailing, 150)
                 Button(action: {
-                    intervaltimer.time.upstream.connect().cancel()
-                    intervaltimer.timers.removeAll()
                     start = false
+                    Task{
+                        intervaltimer.timers.removeAll()
+                    }
+                    player.activeToggle()
                     
                 }){
                     ZStack{
@@ -70,47 +74,27 @@ struct TimerView: View {
                 }
             }
         }
-        .transition(.move(edge: .bottom))
         .onAppear{
-            intervaltimer.timeRemain = intervaltimer.timers.first! - 1
-            intervaltimer.startTimers()
-            liveActivity.onLiveActivity()
-            liveActivity.timerTest()
-        }
-        .onDisappear{
-            intervaltimer.stopTimers()
-            liveActivity.offLiveActivity()
-        }
-        .onChange(of: pause){
-            if $0 {
-                intervaltimer.stopTimers()
-            }else{
+            player.activeToggle()
+            Task{
+                let playItem = await player.mergeAudioFiles(totalTime: totaltime)
+                player.makePlayer(file: playItem)
                 intervaltimer.startTimers()
             }
+            intervaltimer.timeRemain = intervaltimer.timers.first! - 1
+            
         }
-        .onReceive(intervaltimer.$timeRemain){
-            print($0)
-            timeRemain = $0
-            if $0 < 3{
-                if $0 == 0 {
-                    HapticFeedback.shared.play(.heavy)
-                    HapticFeedback.shared.notification(.success)
-                }
-                HapticFeedback.shared.play(.medium)
-            }
-
+    }
+    
+    func getProgress(denominator: Int?, numerator: Int) -> CGFloat{
+        guard denominator != nil else {
+            return 0
         }
-        .onChange(of: intervaltimer.timers.isEmpty){
-            if $0 {
-                start = false
-                liveActivity.offLiveActivity()
-            }
-        }
+        
+        let denominator = CGFloat((denominator ?? 2) - 1)
+        let numerator = CGFloat(numerator >= 0 ? numerator : 1)
+        
+        return numerator / denominator
     }
 }
 
-struct TimerView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerView(start: .constant(true))
-    }
-}

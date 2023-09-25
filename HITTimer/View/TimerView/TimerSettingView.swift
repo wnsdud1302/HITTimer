@@ -24,6 +24,7 @@ struct TimerSettingView: View {
     @State var sets = 1
     
     @Binding var start:Bool
+    @Binding var totalTime: Int
     
     let notificaiton = UNUserNotificationCenter.current()
     
@@ -32,11 +33,12 @@ struct TimerSettingView: View {
                 NavigationStack{
                     VStack {
                         Spacer()
-                        Text(secondsToHMS(totalTime()))
+                        Text(secondsToHMS(getTotalTime()))
                             .font(.system(size: 50))
                         Spacer()
                         HStack{
                             Button(action: {
+                                totalTime = getTotalTime()
                                 intervaltimer.addTimers(totalSec(0, WOmin, WOsec), totalSec(0, RSTmin, RSTsec), sets)
                                 start = true
                             }){
@@ -51,9 +53,9 @@ struct TimerSettingView: View {
                             }
                             .padding(.trailing, 90)
                             Button(action:{
-                                if totalTime() != 0{
-                                    datamanager.insertData(totaltime: totalTime(), wotime: totalSec(0, WOmin, WOsec), rstime: totalSec(0, RSTmin, RSTsec), sets: sets)
-                                    
+                                if getTotalTime() != 0{
+                                    datamanager.insertData(totaltime: getTotalTime(), wotime: totalSec(0, WOmin, WOsec), rstime: totalSec(0, RSTmin, RSTsec), sets: sets)
+                                    wcmanager.sendTimerData(which: TimerData(totaltime: getTotalTime(), wotime: totalSec(0, WOmin, WOsec), rstime: totalSec(0, RSTmin, RSTsec), sets: sets))
                                 }
                             }){
                                 ZStack{
@@ -102,9 +104,10 @@ struct TimerSettingView: View {
                     }
                     .padding()
                 }
-            }
-        }
-}
+                .transition(.push(from: .trailing))
+            }// navigationStack
+        }// body
+}//
 
 
 extension TimerSettingView{
@@ -122,7 +125,7 @@ extension TimerSettingView{
         return hourToSec(hours) + minuteToSec(minutes) + seconds
     }
     
-    func totalTime()-> Int{
+    func getTotalTime()-> Int{
         let wo = totalSec(0, WOmin, WOsec)
         let rst = totalSec(0, RSTmin, RSTsec)
         let total = (wo + rst) * sets
@@ -130,8 +133,3 @@ extension TimerSettingView{
     }
 }
 
-struct TimerSettingView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerSettingView(start: .constant(false))
-    }
-}
