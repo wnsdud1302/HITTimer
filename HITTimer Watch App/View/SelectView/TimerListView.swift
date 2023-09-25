@@ -10,13 +10,21 @@ import SwiftData
 
 struct TimerListView: View {
     @EnvironmentObject var datamanager: DataManager
+    @EnvironmentObject var intervaltimer: IntervalTimer
+    
     @Query() private var timerdatas: [TimerData]
     
     var body: some View {
         List{
             ForEach(timerdatas){ td in
-                
+                NavigationLink(destination: StartView(timerdata: td)){
+                    TimerListCell(timerdata: td)
+                }
             }
+        }
+        .listStyle(.carousel)
+        .onChange(of: timerdatas){
+            print(timerdatas.count)
         }
     }
 }
@@ -24,10 +32,14 @@ struct TimerListView: View {
 struct TimerListCell: View {
     @Bindable var timerdata: TimerData
     var body: some View {
-        VStack{
-            Text("운동시간: \(secondsToMS(timerdata.wotime))")
-            Text("휴식시간: \(secondsToMS(timerdata.rstime))")
+        VStack(alignment: .leading){
             Text("세트수: \(timerdata.sets)")
+                .font(.largeTitle)
+            Text("운동시간: \(secondsToMS(timerdata.wotime))")
+                .font(.subheadline)
+            Text("휴식시간: \(secondsToMS(timerdata.rstime))")
+                .font(.subheadline)
+            
         }
     }
 }

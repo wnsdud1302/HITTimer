@@ -13,27 +13,32 @@ struct HomeView: View {
     @EnvironmentObject var datamanage: DataManager
     
     @State var start = false
+    
+    @State var totaltime = 0
+    
     var body: some View {
-        if !start{
+        NavigationStack{
             TabView{
-                TimerSettingView(start: $start)
+                TimerSettingView(start: $start, totalTime: $totaltime)
                     .tabItem {
                         Image(systemName: "timer")
                             .foregroundStyle(.blue)
                         Text("settting")
                     }
-                TimerSavedView(start: $start)
+                TimerSavedView(start: $start, totalTime: $totaltime)
                     .tabItem {
                         Image(systemName: "list.bullet.clipboard")
                         Text("list")
                     }
             }
-        } else {
-            TimerView(start: $start)
+            .navigationDestination(isPresented: $start){
+                TimerView(totaltime: $totaltime, start: $start)
+                    .navigationBarBackButtonHidden()
+                    .toolbar(.hidden)
+            }
+
         }
     }
 }
 
-#Preview {
-    HomeView()
-}
+

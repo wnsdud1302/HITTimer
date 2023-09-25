@@ -29,6 +29,7 @@ class DataManager: ObservableObject{
         } catch {
             print(error.localizedDescription)
         }
+        print("initialize datamanger")
     }
     
     func insertData(totaltime: Int, wotime: Int, rstime: Int, sets: Int){

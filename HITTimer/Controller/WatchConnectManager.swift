@@ -18,8 +18,9 @@ class WatchConnectManager:NSObject, ObservableObject{
         super.init()
         let session = WCSession.default
         session.delegate = self
-        session.activate()
         self.session = session
+        session.activate()
+        print("session start")
     }
     
     func sendTimerData(which data: TimerData){
@@ -62,6 +63,8 @@ extension WatchConnectManager: WCSessionDelegate{
             let sets = applicationContext["sets"] as! Int
             let new = TimerData(totaltime: totaltime, wotime: wotime, rstime: rstime, sets: sets)
             self.datanamager.context?.insert(new)
+            print("recive")
+
         }
     }
 }
