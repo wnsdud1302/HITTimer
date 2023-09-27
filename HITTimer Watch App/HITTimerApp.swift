@@ -12,9 +12,9 @@ import SwiftData
 @main
 struct HITTimer_Watch_AppApp: App {
     @StateObject private var workoutManager = WorkoutManager()
-    @StateObject private var intervaltimer = IntervalTimer()
     @StateObject private var wcmanager = WatchConnectManager()
     @StateObject private var datamanager = DataManager.shared
+    @StateObject private var intervalTimerWIthDate = IntervalTimerWithDate()
     
     @Environment(\.scenePhase) private var newPhase
     
@@ -31,8 +31,8 @@ struct HITTimer_Watch_AppApp: App {
                 })
         }
         .environmentObject(workoutManager)
-        .environmentObject(intervaltimer)
         .environmentObject(datamanager)
+        .environmentObject(intervalTimerWIthDate)
         .modelContainer(datamanager.container!)
     }
 }

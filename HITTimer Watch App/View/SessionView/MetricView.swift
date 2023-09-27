@@ -12,14 +12,15 @@ struct MetricView: View {
     
     @EnvironmentObject var workoutmanager: WorkoutManager
     @EnvironmentObject var intervalTimer: IntervalTimer
+    @EnvironmentObject var intervalTimerWithDate: IntervalTimerWithDate
     
     @State var showSubseconds = false
     var body: some View {
-        TimelineView(MetricTimeLineSchedule(from: workoutmanager.builder?.startDate ?? Date(), isPaused: workoutmanager.session?.state == .paused)){ context in
+        TimelineView(MetricTimeLineSchedule(from: workoutmanager.builder?.startDate ?? Date(), isPaused: workoutmanager.session?.state == .paused || intervalTimerWithDate.endtimer == true)){ context in
             VStack(alignment: .leading){
-                Text(intervalTimer.checkType())
-                Text(intervalTimer.checkRound())
-                TimeView(showSubseconds: $showSubseconds)
+                Text(intervalTimerWithDate.checkType())
+                Text(intervalTimerWithDate.checkRound())
+                TimeView(time: intervalTimerWithDate.getTimer(from: context.date), showSubseconds: context.cadence == .live)
                     .foregroundStyle(.yellow)
                 Text(Measurement(value: workoutmanager.activeEnergy, unit: UnitEnergy.kilocalories)
                     .formatted(.measurement(width: .abbreviated, usage: .workout, numberFormatStyle: .number.precision(.fractionLength(0))))
@@ -50,9 +51,9 @@ private struct MetricTimeLineSchedule: TimelineSchedule{
     }
     
     func entries(from startDate: Date, mode: TimelineScheduleMode) -> AnyIterator<Date> {
-        var baseSchedule = PeriodicTimelineSchedule(from: startDate, by: (mode == .lowFrequency ? 1 : 1.0 / 30.0))
+        var baseSchedule = PeriodicTimelineSchedule(from: startDate, by: (mode == .lowFrequency ? 0.01 : 1.0 / 30.0))
             .entries(from: startDate, mode: mode)
-        
+        print(mode)
         return AnyIterator<Date> {
             guard !isPaused else { return nil }
             return baseSchedule.next()

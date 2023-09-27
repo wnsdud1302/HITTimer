@@ -12,6 +12,7 @@ struct SelectWorkoutView: View {
     
     @EnvironmentObject var workoutManager: WorkoutManager
     @EnvironmentObject var intervalTimer: IntervalTimer
+    @EnvironmentObject var intervalTimerWithDate: IntervalTimerWithDate
     @Binding var activityType: HKWorkoutActivityType
     @Binding var showView: Bool
     

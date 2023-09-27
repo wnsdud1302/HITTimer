@@ -30,7 +30,6 @@ struct TimerSettingView: View {
     
     var body: some View {
         VStack{
-                NavigationStack{
                     VStack {
                         Spacer()
                         Text(secondsToHMS(getTotalTime()))
@@ -104,8 +103,6 @@ struct TimerSettingView: View {
                     }
                     .padding()
                 }
-                .transition(.push(from: .trailing))
-            }// navigationStack
         }// body
 }//
 

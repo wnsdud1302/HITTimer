@@ -10,13 +10,14 @@ import SwiftUI
 struct ControlView: View {
     @EnvironmentObject var workoutManager: WorkoutManager
     @EnvironmentObject var intervalTimer: IntervalTimer
+    @EnvironmentObject var intervalTimerWithDate: IntervalTimerWithDate
 
     var body: some View {
         HStack {
             VStack {
                 Button {
                     workoutManager.endWorkout()
-                    intervalTimer.endTimer()
+                    intervalTimerWithDate.endTimer()
                 } label: {
                     Image(systemName: "xmark")
                 }
@@ -27,7 +28,6 @@ struct ControlView: View {
             VStack {
                 Button {
                     workoutManager.togglePause()
-                    intervalTimer.toggleTimer()
                 } label: {
                     Image(systemName: workoutManager.running ? "pause" : "play")
                 }

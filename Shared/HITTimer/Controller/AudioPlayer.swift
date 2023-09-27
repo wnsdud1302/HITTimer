@@ -14,7 +14,7 @@ class AudioPlayer: ObservableObject{
     
     static let shared = AudioPlayer()
     
-    private let session: AVAudioSession?
+    private var session: AVAudioSession?
     private var player: AVPlayer?
     
     
@@ -26,7 +26,7 @@ class AudioPlayer: ObservableObject{
         }
     }
     
-    init(){
+    func makeSession(){
         let session = AVAudioSession.sharedInstance()
         do{
             try session.setCategory(.playback, mode: .default, policy: .default, options: .duckOthers)
@@ -36,7 +36,6 @@ class AudioPlayer: ObservableObject{
         print("avaudio session start")
         self.session = session
     }
-    
 //    func makeCountDown(_ count: String){
 //        let utterance = AVSpeechUtterance(string: count)
 //        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
@@ -52,6 +51,7 @@ class AudioPlayer: ObservableObject{
             print(error)
         }
     }
+    
     func activeToggle(){
         if active == false{
             active = true
@@ -68,7 +68,7 @@ class AudioPlayer: ObservableObject{
     }
     
     func makePlayer(file : AVPlayerItem?){
-
+        makeSession()
         guard file != nil else {
             print("file is nil")
             return
@@ -86,6 +86,11 @@ class AudioPlayer: ObservableObject{
     
     func resume(){
         player?.play()
+    }
+    
+    func end(){
+        player = nil
+        session = nil
     }
     
     

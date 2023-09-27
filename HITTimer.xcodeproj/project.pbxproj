@@ -34,6 +34,7 @@
 		9C7279762ABBB11100A34BC1 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7279752ABBB11100A34BC1 /* SummaryView.swift */; };
 		9C7279782ABBB15000A34BC1 /* ActivityRingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7279772ABBB15000A34BC1 /* ActivityRingsView.swift */; };
 		9C7279892ABCBDE500A34BC1 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7279882ABCBDE500A34BC1 /* NotificationManager.swift */; };
+		9C80178A2AC2BD24009DA184 /* IntervalTimerWithDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8017892AC2BD24009DA184 /* IntervalTimerWithDate.swift */; };
 		9C8C29452ABE17CC00C4A2C5 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7279882ABCBDE500A34BC1 /* NotificationManager.swift */; };
 		9C8C29472ABE182C00C4A2C5 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8C29462ABE182C00C4A2C5 /* AudioPlayer.swift */; };
 		9C8C29562ABECBC800C4A2C5 /* 1hour.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C8C29552ABECBC800C4A2C5 /* 1hour.mp3 */; };
@@ -41,7 +42,6 @@
 		9C8C295C2ABF306900C4A2C5 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8C295B2ABF306900C4A2C5 /* TimeView.swift */; };
 		9C8EE3E72AC01B6400FE6F32 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EE3E62AC01B6400FE6F32 /* HapticFeedback.swift */; };
 		9C8EE3E92AC0258D00FE6F32 /* WatchConnectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B6CF52ABB3C3000C60267 /* WatchConnectManager.swift */; };
-		9C8EE3EA2AC02DE800FE6F32 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8C29462ABE182C00C4A2C5 /* AudioPlayer.swift */; };
 		9C8EE3EB2AC03C8E00FE6F32 /* 1hour.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C8C29552ABECBC800C4A2C5 /* 1hour.mp3 */; };
 		9C8EE3ED2AC03FE700FE6F32 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EE3EC2AC03FE700FE6F32 /* SummaryView.swift */; };
 		9C8EE3F32AC0835200FE6F32 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C26E2982AB8DAFE00C30AFD /* WorkoutManager.swift */; };
@@ -112,6 +112,7 @@
 		9C7279752ABBB11100A34BC1 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		9C7279772ABBB15000A34BC1 /* ActivityRingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityRingsView.swift; sourceTree = "<group>"; };
 		9C7279882ABCBDE500A34BC1 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		9C8017892AC2BD24009DA184 /* IntervalTimerWithDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerWithDate.swift; sourceTree = "<group>"; };
 		9C8C29462ABE182C00C4A2C5 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		9C8C29552ABECBC800C4A2C5 /* 1hour.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1hour.mp3; sourceTree = "<group>"; };
 		9C8C29592ABF1B9700C4A2C5 /* IntervalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimer.swift; sourceTree = "<group>"; };
@@ -181,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				9C59C4A62A834163000ACB45 /* Shared */,
-				9C59C47C2A834127000ACB45 /* HITTimer */,
 				9C59C48E2A834128000ACB45 /* HITTimer Watch App */,
 				9C9BC4AF2A85274B001EDA39 /* Frameworks */,
 				9C59C47B2A834127000ACB45 /* Products */,
@@ -257,8 +257,9 @@
 				9C4B6CFB2ABB52DD00C60267 /* DataManager.swift */,
 				9C26E2982AB8DAFE00C30AFD /* WorkoutManager.swift */,
 				9C7279882ABCBDE500A34BC1 /* NotificationManager.swift */,
-				9C8C29462ABE182C00C4A2C5 /* AudioPlayer.swift */,
+				9C4B6CF52ABB3C3000C60267 /* WatchConnectManager.swift */,
 				9C8C29552ABECBC800C4A2C5 /* 1hour.mp3 */,
+				9C59C47C2A834127000ACB45 /* HITTimer */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -288,9 +289,9 @@
 		9C8C29572ABF19AF00C4A2C5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9C8C29462ABE182C00C4A2C5 /* AudioPlayer.swift */,
 				9C16F4682A85D82B00299EA8 /* IntervalTimer.swift */,
 				9C9BC4A82A8525C1001EDA39 /* HapticFeedback.swift */,
-				9C4B6CF52ABB3C3000C60267 /* WatchConnectManager.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,6 +301,7 @@
 			children = (
 				9C8C29592ABF1B9700C4A2C5 /* IntervalTimer.swift */,
 				9C8EE3E62AC01B6400FE6F32 /* HapticFeedback.swift */,
+				9C8017892AC2BD24009DA184 /* IntervalTimerWithDate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -472,11 +474,11 @@
 				9CC6987B2ABB879900FA4E79 /* TimerListView.swift in Sources */,
 				9C8C29452ABE17CC00C4A2C5 /* NotificationManager.swift in Sources */,
 				9C7279742ABBADA200A34BC1 /* ControlView.swift in Sources */,
+				9C80178A2AC2BD24009DA184 /* IntervalTimerWithDate.swift in Sources */,
 				9C26E29A2AB8DBA100C30AFD /* WorkoutManager.swift in Sources */,
 				9C72796E2ABBA6B900A34BC1 /* MetricView.swift in Sources */,
 				9C4B6CAD2ABA244300C60267 /* SelectWorkoutView.swift in Sources */,
 				9C7279782ABBB15000A34BC1 /* ActivityRingsView.swift in Sources */,
-				9C8EE3EA2AC02DE800FE6F32 /* AudioPlayer.swift in Sources */,
 				9C8EE3E92AC0258D00FE6F32 /* WatchConnectManager.swift in Sources */,
 				9C8C295C2ABF306900C4A2C5 /* TimeView.swift in Sources */,
 				9C59C4902A834128000ACB45 /* HITTimerApp.swift in Sources */,
@@ -688,7 +690,6 @@
 				CODE_SIGN_ENTITLEMENTS = HITTimer/HITTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"HITTimer/Preview Content\"";
 				DEVELOPMENT_TEAM = YKGE292M6D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -732,7 +733,6 @@
 				CODE_SIGN_ENTITLEMENTS = HITTimer/HITTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"HITTimer/Preview Content\"";
 				DEVELOPMENT_TEAM = YKGE292M6D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

@@ -23,25 +23,41 @@ class WorkoutManager:NSObject, ObservableObject{
     
     let healthStore = HKHealthStore()
     
-#if os(iOS)
-    
     func requestAuthorization(){
-        let typesToshare: Set<HKSampleType> = [
-            .workoutType(),
+        let typesToshare: Set = [
+            HKQuantityType.workoutType(),
             HKSeriesType.workoutRoute()
         ]
         
-        let typesToRead: Set<HKSampleType> = [
-                            .workoutType(),
-                             HKSeriesType.workoutType(),
-                             HKSeriesType.workoutRoute(),
-                             HKObjectType.quantityType(forIdentifier: .heartRate)!,
-                             HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!
+        let typesToRead: Set = [
+            HKQuantityType.quantityType(forIdentifier: .heartRate)!,
+            HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
+            HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
         ]
         
         healthStore.requestAuthorization(toShare: typesToshare, read: typesToRead) { success, error in
         }
     }
+    
+#if os(iOS)
+    
+//    func requestAuthorization(){
+//        let typesToshare: Set<HKSampleType> = [
+//            .workoutType(),
+//            HKSeriesType.workoutRoute()
+//        ]
+//        
+//        let typesToRead: Set<HKSampleType> = [
+//                            .workoutType(),
+//                             HKSeriesType.workoutType(),
+//                             HKSeriesType.workoutRoute(),
+//                             HKObjectType.quantityType(forIdentifier: .heartRate)!,
+//                             HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!
+//        ]
+//        
+//        healthStore.requestAuthorization(toShare: typesToshare, read: typesToRead) { success, error in
+//        }
+//    }
     
     func getWorkouts(completion: @escaping ([HKWorkout]?, Error?) -> Void) async {
         let source = HKQuery.predicateForObjects(from: .default())
@@ -73,21 +89,7 @@ class WorkoutManager:NSObject, ObservableObject{
         }
     }
     
-    func requestAuthorization(){
-        let typesToshare: Set = [
-            HKQuantityType.workoutType(),
-            HKSeriesType.workoutRoute()
-        ]
-        
-        let typesToRead: Set = [
-            HKQuantityType.quantityType(forIdentifier: .heartRate)!,
-            HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
-            HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
-        ]
-        
-        healthStore.requestAuthorization(toShare: typesToshare, read: typesToRead) { success, error in
-        }
-    }
+   
     
     func startWorkout(workoutType: HKWorkoutActivityType, locationType: HKWorkoutSessionLocationType) {
         let configuration = HKWorkoutConfiguration()

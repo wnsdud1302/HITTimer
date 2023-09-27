@@ -74,16 +74,7 @@ struct TimerView: View {
                 }
             }
         }
-        .onAppear{
-            player.activeToggle()
-            Task{
-                let playItem = await player.mergeAudioFiles(totalTime: totaltime)
-                player.makePlayer(file: playItem)
-                intervaltimer.startTimers()
-            }
-            intervaltimer.timeRemain = intervaltimer.timers.first! - 1
-            
-        }
+        .modifier(settingTimer(totaltime: $totaltime))
     }
     
     func getProgress(denominator: Int?, numerator: Int) -> CGFloat{
@@ -95,6 +86,29 @@ struct TimerView: View {
         let numerator = CGFloat(numerator >= 0 ? numerator : 1)
         
         return numerator / denominator
+    }
+}
+
+struct settingTimer: ViewModifier{
+    
+    @EnvironmentObject var intervaltimer : IntervalTimer
+    @EnvironmentObject var player : AudioPlayer
+    
+    @Binding var totaltime: Int
+    
+    func body(content: Content) -> some View {
+        content.onAppear{
+            player.activeToggle()
+            Task{
+                let playItem = await player.mergeAudioFiles(totalTime: totaltime)
+                player.makePlayer(file: playItem)
+                intervaltimer.startTimers()
+            }
+            intervaltimer.timeRemain = intervaltimer.timers.first! - 1
+        }
+        .onDisappear{
+            player.end()
+        }
     }
 }
 

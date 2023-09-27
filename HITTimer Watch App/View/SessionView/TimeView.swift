@@ -11,13 +11,14 @@ struct TimeView: View {
     
     @EnvironmentObject var intervalTimer: IntervalTimer
     
-    
     @State private var timerFormatter = ElapsedTimeFormatter()
+    
+    var time : TimeInterval = 0
 
-    @Binding var showSubseconds:Bool
+    var showSubseconds: Bool = true
     
     var body: some View {
-        Text(NSNumber(value: intervalTimer.timeRemain), formatter: timerFormatter)
+        Text(NSNumber(value: time), formatter: timerFormatter)
             .onChange(of: showSubseconds){
                 timerFormatter.showSubseconds = !timerFormatter.showSubseconds
             }
@@ -31,7 +32,7 @@ class ElapsedTimeFormatter: Formatter {
         formatter.zeroFormattingBehavior = .pad
         return formatter
     }()
-    var showSubseconds = false
+    var showSubseconds = true
 
     override func string(for value: Any?) -> String? {
         guard let time = value as? TimeInterval else {

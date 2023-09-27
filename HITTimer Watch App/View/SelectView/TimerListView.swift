@@ -12,6 +12,7 @@ import HealthKit
 struct TimerListView: View {
     @EnvironmentObject var datamanager: DataManager
     @EnvironmentObject var intervaltimer: IntervalTimer
+    @EnvironmentObject var intervalTimerWithDate: IntervalTimerWithDate
     @EnvironmentObject var workoutManager: WorkoutManager
     
     @State var activityType: HKWorkoutActivityType = .running
@@ -26,7 +27,7 @@ struct TimerListView: View {
             ForEach(timerdatas){ td in
                 Button(action:{
                     showSession = true
-                    intervaltimer.addTimers(td.wotime, td.rstime, td.sets)
+                    intervalTimerWithDate.addTimers(td.wotime, td.rstime, td.sets)
                 }){
                     TimerListCell(activityType: $activityType, timerdata: td)
                 }

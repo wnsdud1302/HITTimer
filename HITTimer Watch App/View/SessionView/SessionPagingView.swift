@@ -13,6 +13,7 @@ struct SessionPagingView: View {
     
     @EnvironmentObject var workoutmanager: WorkoutManager
     @EnvironmentObject var intervaltimer: IntervalTimer
+    @EnvironmentObject var intervalTimerWithDate: IntervalTimerWithDate
     
     @Binding var activityType:HKWorkoutActivityType
     @State private var selection: Tab = .metrics
@@ -37,7 +38,7 @@ struct SessionPagingView: View {
         .navigationTitle(workoutmanager.session?.workoutConfiguration.activityType.name ?? "")
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden)
-        .onChange(of: workoutmanager.running || intervaltimer.running){
+        .onChange(of: workoutmanager.running){
             withAnimation{
                 selection = .metrics
             }
@@ -60,6 +61,7 @@ struct endSessionPagingView: ViewModifier{
     
     @EnvironmentObject var workoutmanager: WorkoutManager
     @EnvironmentObject var intervaltimer: IntervalTimer
+    @EnvironmentObject var intervalTimerWithDate: IntervalTimerWithDate
     
     @Binding var activityType:HKWorkoutActivityType
     @Binding var showView: Bool
@@ -68,13 +70,12 @@ struct endSessionPagingView: ViewModifier{
     func body(content: Content) -> some View {
         content
             .onChange(of: workoutmanager.showingSummaryView){ oldState, newState in
-                if oldState == true && newState == false{
+                if !newState{
                     showView = false
                 }
             }
-            .onReceive(intervaltimer.$endtimer){
-                if $0 == true {
-                    print("end workout")
+            .onChange(of: intervalTimerWithDate.endtimer){ oldState, newState in
+                if newState && !oldState{
                     workoutmanager.endWorkout()
                 }
             }
@@ -89,6 +90,7 @@ struct SettingSessionPagingView: ViewModifier{
     
     @EnvironmentObject var workoutmanager: WorkoutManager
     @EnvironmentObject var intervaltimer: IntervalTimer
+    @EnvironmentObject var intervalTimerWithDate: IntervalTimerWithDate
     
     @Binding var activityType:HKWorkoutActivityType
     
@@ -100,9 +102,9 @@ struct SettingSessionPagingView: ViewModifier{
                 } else {
                     workoutmanager.startWorkout(workoutType: activityType, locationType: .outdoor)
                 }
-                intervaltimer.timeRemain = intervaltimer.timers.first! - 1
-                intervaltimer.startTimer()
-                print(intervaltimer.timers)
+//                intervaltimer.timeRemain = intervaltimer.timers.first! - 1
+                intervalTimerWithDate.startTimer()
+                print(intervalTimerWithDate.timers)
             }
     }
 }

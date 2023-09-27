@@ -11,6 +11,8 @@ import WatchKit
 
 struct SummaryView: View {
     @EnvironmentObject var workoutmanager: WorkoutManager
+    @EnvironmentObject var intervalTimerWithDate: IntervalTimerWithDate
+    
     @Environment(\.dismiss) var dismiss
     @State private var durationFormatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
@@ -37,6 +39,7 @@ struct SummaryView: View {
                         .foregroundStyle(.red)
                     Button("Done"){
                         dismiss()
+                        intervalTimerWithDate.endtimer = false
                     }
                 }
                 .scenePadding()

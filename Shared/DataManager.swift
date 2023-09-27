@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-@Observable
+
 class DataManager: ObservableObject{
     
     static let shared =  DataManager()
