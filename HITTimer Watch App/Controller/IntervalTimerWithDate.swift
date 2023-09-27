@@ -58,6 +58,8 @@ class IntervalTimerWithDate: ObservableObject{
     func getTimer(from fromDate: Date) -> TimeInterval{
         guard timeRemain != nil else {
             endTimer()
+            timeRemain = 0
+            timers.append(0)
             print("timeRemain is nil")
             return 0
         }

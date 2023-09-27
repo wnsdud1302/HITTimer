@@ -182,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				9C59C4A62A834163000ACB45 /* Shared */,
+				9C59C47C2A834127000ACB45 /* HITTimer */,
 				9C59C48E2A834128000ACB45 /* HITTimer Watch App */,
 				9C9BC4AF2A85274B001EDA39 /* Frameworks */,
 				9C59C47B2A834127000ACB45 /* Products */,
@@ -259,7 +260,6 @@
 				9C7279882ABCBDE500A34BC1 /* NotificationManager.swift */,
 				9C4B6CF52ABB3C3000C60267 /* WatchConnectManager.swift */,
 				9C8C29552ABECBC800C4A2C5 /* 1hour.mp3 */,
-				9C59C47C2A834127000ACB45 /* HITTimer */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -690,6 +690,7 @@
 				CODE_SIGN_ENTITLEMENTS = HITTimer/HITTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HITTimer/Preview Content\"";
 				DEVELOPMENT_TEAM = YKGE292M6D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -733,6 +734,7 @@
 				CODE_SIGN_ENTITLEMENTS = HITTimer/HITTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HITTimer/Preview Content\"";
 				DEVELOPMENT_TEAM = YKGE292M6D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
