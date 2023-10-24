@@ -13,19 +13,16 @@ class DataManager: ObservableObject{
     
     static let shared =  DataManager()
     
-    var container: ModelContainer?{
-        didSet{
-            DispatchQueue.main.async{
-                self.context = self.container?.mainContext
-            }
-        }
-    }
+    var container: ModelContainer?
     
     var context: ModelContext?
     
     init(){
         do{
             container = try ModelContainer(for: TimerData.self)
+            DispatchQueue.main.async {
+                self.context = self.container?.mainContext
+            }
         } catch {
             print(error.localizedDescription)
         }

@@ -26,8 +26,6 @@ class IntervalTimer: ObservableObject{
         didSet{
             if endtimer == false{
                 resetTimer()
-            } else {
-                endtimer = false
             }
         }
     }

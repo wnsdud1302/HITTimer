@@ -70,18 +70,28 @@ class IntervalTimer: ObservableObject{
                 endTimer()
                 return
             }
-            if timeRemain <= 0{
+            switch timeRemain{
+            case 1..<4:
+                HapticFeedback.shared.play(.light)
+            case 0:
                 HapticFeedback.shared.notification(.success)
                 timers.removeFirst()
                 timeRemain = (timers.first ?? 1) - 1
                 return
+            default:
+                break
             }
-            if timeRemain < 4 && timeRemain != 0{
-                HapticFeedback.shared.play(.light)
-            }
+//            if timeRemain <= 0{
+//                HapticFeedback.shared.notification(.success)
+//                timers.removeFirst()
+//                timeRemain = (timers.first ?? 1) - 1
+//                return
+//            }
+//            if timeRemain < 4 && timeRemain != 0{
+//                HapticFeedback.shared.play(.light)
+//            }
             timeRemain -= 1
         }
-
     }
     
     func resumeTimer(){

@@ -9,6 +9,7 @@ import Foundation
 import CoreLocation
 import MapKit
 import HealthKit
+import SwiftUI
 
 
 class WorkoutManager:NSObject, ObservableObject{
@@ -30,6 +31,8 @@ class WorkoutManager:NSObject, ObservableObject{
         ]
         
         let typesToRead: Set = [
+            .workoutType(),
+            HKSeriesType.workoutRoute(),
             HKQuantityType.quantityType(forIdentifier: .heartRate)!,
             HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
             HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
@@ -40,24 +43,6 @@ class WorkoutManager:NSObject, ObservableObject{
     }
     
 #if os(iOS)
-    
-//    func requestAuthorization(){
-//        let typesToshare: Set<HKSampleType> = [
-//            .workoutType(),
-//            HKSeriesType.workoutRoute()
-//        ]
-//        
-//        let typesToRead: Set<HKSampleType> = [
-//                            .workoutType(),
-//                             HKSeriesType.workoutType(),
-//                             HKSeriesType.workoutRoute(),
-//                             HKObjectType.quantityType(forIdentifier: .heartRate)!,
-//                             HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!
-//        ]
-//        
-//        healthStore.requestAuthorization(toShare: typesToshare, read: typesToRead) { success, error in
-//        }
-//    }
     
     func getWorkouts(completion: @escaping ([HKWorkout]?, Error?) -> Void) async {
         let source = HKQuery.predicateForObjects(from: .default())
@@ -222,5 +207,41 @@ extension HKWorkout: Identifiable{
     public typealias ID = Int
     public var id: Int {
         return hash
+    }
+}
+
+extension HKWorkoutActivityType: Identifiable{
+    public var id : UInt {
+        rawValue
+    }
+    
+    var name: String{
+        switch self {
+        case .running:
+            return " 달리기"
+        case .walking:
+            return "걷기"
+        case .highIntensityIntervalTraining:
+            return "인터벌트레이닝"
+        case .traditionalStrengthTraining:
+            return "근력운동"
+        default:
+            return ""
+        }
+    }
+    
+    var image: Image{
+        switch self{
+        case .running:
+            return Image(systemName: "figure.run")
+        case .walking:
+            return Image(systemName: "figure.walk")
+        case .highIntensityIntervalTraining:
+            return Image(systemName: "figure.highintensity.intervaltraining")
+        case .traditionalStrengthTraining:
+            return Image(systemName: "figure.strengthtraining.traditional")
+        default:
+            return Image(systemName: "figure.run")
+        }
     }
 }

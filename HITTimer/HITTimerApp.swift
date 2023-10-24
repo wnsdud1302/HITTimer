@@ -6,10 +6,7 @@
 //
 
 import SwiftUI
-import UIKit
-import WatchConnectivity
-import UserNotifications
-import BackgroundTasks
+
 
 @main
 struct HITTimerApp: App {
@@ -20,20 +17,6 @@ struct HITTimerApp: App {
     @StateObject var intervaltimer = IntervalTimer.shared
     @StateObject var wcmanager = WatchConnectManager()
     @StateObject var player = AudioPlayer.shared
-    
-    
-        
-    init(){
-        let notification = UNUserNotificationCenter.current()
-        
-        notification.requestAuthorization(options: [.alert, .badge, .sound]){ granted, error in
-            if granted{
-                print("success")
-            } else{
-                print(error as Any)
-            }
-        }
-    }
     
     var body: some Scene {
         WindowGroup {

@@ -47,8 +47,9 @@ extension WatchConnectManager: WCSessionDelegate{
     }
     
 }
+#endif
 
-#elseif os(watchOS)
+#if os(watchOS)
 extension WatchConnectManager: WCSessionDelegate{
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {

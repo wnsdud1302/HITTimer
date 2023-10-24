@@ -11,7 +11,6 @@ import HealthKit
 
 struct TimerListView: View {
     @EnvironmentObject var datamanager: DataManager
-    @EnvironmentObject var intervaltimer: IntervalTimer
     @EnvironmentObject var intervalTimerWithDate: IntervalTimerWithDate
     @EnvironmentObject var workoutManager: WorkoutManager
     

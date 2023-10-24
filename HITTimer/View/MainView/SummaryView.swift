@@ -42,7 +42,6 @@ struct SummaryView: View {
                         print(error!)
                         return
                     }
-                    print(workouts?.count)
                     self.workList = workouts!
                 }
             }

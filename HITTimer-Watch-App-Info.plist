@@ -2,19 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>rcord location for workout</string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>record workout</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>record workout</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
 	</array>
 	<key>WKBackgroundModes</key>
 	<array>
-		<string>physical-therapy</string>
 		<string>workout-processing</string>
 	</array>
 </dict>

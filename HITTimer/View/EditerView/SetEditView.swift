@@ -53,9 +53,3 @@ extension SetEditView{
         }
     }
 }
-
-struct SetEditView_Previews: PreviewProvider {
-    static var previews: some View {
-        SetEditView(sets: .constant(10))
-    }
-}

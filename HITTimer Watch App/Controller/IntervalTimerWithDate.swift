@@ -65,15 +65,30 @@ class IntervalTimerWithDate: ObservableObject{
         }
         let timeRemain = fromDate.distance(to: timerStartDate ?? Date())
         
-        if timeRemain <= 0 {
+//        if timeRemain <= 0 {
+//            timers.removeFirst()
+//            self.timeRemain = timers.first
+//            timerStartDate = Date(timeIntervalSinceNow: self.timeRemain ?? 0)
+//            remainSets = timers.count / 2
+//            HapticFeedback.shared.sendFeedBack(.success)
+//        }
+        
+        switch timeRemain {
+        case 3.00..<3.01:
+            HapticFeedback.shared.sendFeedBack(.start)
+        case 2.00..<2.01:
+            HapticFeedback.shared.sendFeedBack(.start)
+        case 1.00..<1.01:
+            HapticFeedback.shared.sendFeedBack(.start)
+        case -0.1..<0.00:
             timers.removeFirst()
             self.timeRemain = timers.first
             timerStartDate = Date(timeIntervalSinceNow: self.timeRemain ?? 0)
             remainSets = timers.count / 2
             HapticFeedback.shared.sendFeedBack(.success)
-            
+        default:
+            break
         }
-        print("timeRemain = \(timeRemain)")
         return timeRemain
     }
     

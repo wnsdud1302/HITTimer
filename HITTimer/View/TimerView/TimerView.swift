@@ -23,27 +23,13 @@ struct TimerView: View {
         VStack{
             Text(intervaltimer.checkType())
                 .font(.system(size: 90))
-            ZStack(alignment: .leading){
-                
-                Rectangle()
-                    .foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.8))
-                    .frame(width:350 * getProgress(denominator: intervaltimer.timers.first, numerator: intervaltimer.timeRemain), height: 50)
-                    .cornerRadius(15)
-                    .animation(.linear(duration: 1), value: intervaltimer.timeRemain)
-                
-                Rectangle()
-                    .foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.8, opacity: 0.6))
-                .frame(width: 350, height: 50)
-                .cornerRadius(15)
-            }
-                
+            TimerProgressView()
             Text(intervaltimer.secondsToHMS(intervaltimer.timeRemain))
                     .font(.system(size: 50))
             
             HStack{
                 Button(action: {
                     intervaltimer.toggleTimer()
-                    
                 }){
                     ZStack{
                         Circle()
@@ -77,6 +63,27 @@ struct TimerView: View {
         .modifier(settingTimer(totaltime: $totaltime))
     }
     
+    
+}
+
+struct TimerProgressView: View {
+    @EnvironmentObject var intervaltimer: IntervalTimer
+    
+    var body: some View {
+        ZStack(alignment: .leading){
+            Rectangle()
+                .foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.8))
+                .frame(width:350 * getProgress(denominator: intervaltimer.timers.first, numerator: intervaltimer.timeRemain), height: 50)
+                .cornerRadius(15)
+                .animation(.linear(duration: checkAnimation() ? 0 : 1), value: intervaltimer.timeRemain)
+            
+            Rectangle()
+                .foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.8, opacity: 0.6))
+            .frame(width: 350, height: 50)
+            .cornerRadius(15)
+        }
+    }
+    
     func getProgress(denominator: Int?, numerator: Int) -> CGFloat{
         guard denominator != nil else {
             return 0
@@ -87,6 +94,11 @@ struct TimerView: View {
         
         return numerator / denominator
     }
+    
+    func checkAnimation() -> Bool{
+        return intervaltimer.timers.first! - 1 == intervaltimer.timeRemain
+    }
+    
 }
 
 struct settingTimer: ViewModifier{
@@ -111,4 +123,3 @@ struct settingTimer: ViewModifier{
         }
     }
 }
-

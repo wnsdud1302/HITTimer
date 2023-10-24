@@ -60,7 +60,6 @@ struct SessionPagingView: View {
 struct endSessionPagingView: ViewModifier{
     
     @EnvironmentObject var workoutmanager: WorkoutManager
-    @EnvironmentObject var intervaltimer: IntervalTimer
     @EnvironmentObject var intervalTimerWithDate: IntervalTimerWithDate
     
     @Binding var activityType:HKWorkoutActivityType

@@ -47,10 +47,3 @@ struct TimerEditView: View {
         return hour * 3600
     }
 }
-
-
-struct TimerEditView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerEditView(minute: .constant(10), second: .constant(10))
-    }
-}

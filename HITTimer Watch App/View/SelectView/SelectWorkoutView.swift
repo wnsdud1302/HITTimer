@@ -43,40 +43,6 @@ struct StartViewCell: View {
     }
 }
 
-extension HKWorkoutActivityType: Identifiable{
-    public var id : UInt {
-        rawValue
-    }
-    
-    var name: String{
-        switch self {
-        case .running:
-            return " 달리기"
-        case .walking:
-            return "걷기"
-        case .highIntensityIntervalTraining:
-            return "인터벌트레이닝"
-        case .traditionalStrengthTraining:
-            return "근력운동"
-        default:
-            return ""
-        }
-    }
-    
-    var image: Image{
-        switch self{
-        case .running:
-            return Image(systemName: "figure.run")
-        case .walking:
-            return Image(systemName: "figure.walk")
-        case .highIntensityIntervalTraining:
-            return Image(systemName: "figure.highintensity.intervaltraining")
-        case .traditionalStrengthTraining:
-            return Image(systemName: "figure.strengthtraining.traditional")
-        default:
-            return Image(systemName: "figure.run")
-        }
-    }
-}
+
 
 

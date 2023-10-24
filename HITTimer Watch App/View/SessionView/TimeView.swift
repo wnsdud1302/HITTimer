@@ -9,8 +9,6 @@ import SwiftUI
 
 struct TimeView: View {
     
-    @EnvironmentObject var intervalTimer: IntervalTimer
-    
     @State private var timerFormatter = ElapsedTimeFormatter()
     
     var time : TimeInterval = 0

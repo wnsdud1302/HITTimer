@@ -10,6 +10,7 @@
 		9C16F4692A85D82B00299EA8 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C16F4682A85D82B00299EA8 /* IntervalTimer.swift */; };
 		9C16F46D2A85D84A00299EA8 /* TimerEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C16F46C2A85D84A00299EA8 /* TimerEditView.swift */; };
 		9C26E29A2AB8DBA100C30AFD /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C26E2982AB8DAFE00C30AFD /* WorkoutManager.swift */; };
+		9C288F7E2AD93015008BF3C4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C288F7D2AD93015008BF3C4 /* NetworkManager.swift */; };
 		9C4B6CAD2ABA244300C60267 /* SelectWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B6CAC2ABA244300C60267 /* SelectWorkoutView.swift */; };
 		9C4B6CB02ABB1BBF00C60267 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B6CAF2ABB1BBF00C60267 /* HomeView.swift */; };
 		9C4B6CF92ABB522000C60267 /* TimerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B6CF82ABB522000C60267 /* TimerData.swift */; };
@@ -49,6 +50,7 @@
 		9C9BC4A92A8525C1001EDA39 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9BC4A82A8525C1001EDA39 /* HapticFeedback.swift */; };
 		9CB02FC12A8371470075CF99 /* SetEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB02FC02A8371470075CF99 /* SetEditView.swift */; };
 		9CC6987B2ABB879900FA4E79 /* TimerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6987A2ABB879900FA4E79 /* TimerListView.swift */; };
+		9CEC4D352ADD156800D10C10 /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC4D342ADD156800D10C10 /* HealthData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,7 @@
 		9C16F4682A85D82B00299EA8 /* IntervalTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalTimer.swift; sourceTree = "<group>"; };
 		9C16F46C2A85D84A00299EA8 /* TimerEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerEditView.swift; sourceTree = "<group>"; };
 		9C26E2982AB8DAFE00C30AFD /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		9C288F7D2AD93015008BF3C4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9C4B6CAB2ABA10D600C60267 /* HITTimer Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HITTimer Watch App.entitlements"; sourceTree = "<group>"; };
 		9C4B6CAC2ABA244300C60267 /* SelectWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWorkoutView.swift; sourceTree = "<group>"; };
 		9C4B6CAF2ABB1BBF00C60267 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 		9CCE468B2A8A522200195CCC /* HITTimer-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "HITTimer-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9CDF6CCE2A88165000E3A074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9CDF6CCF2A88175600E3A074 /* HITTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HITTimer.entitlements; sourceTree = "<group>"; };
+		9CEC4D342ADD156800D10C10 /* HealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,7 +185,7 @@
 		9C59C4712A834127000ACB45 = {
 			isa = PBXGroup;
 			children = (
-				9C59C4A62A834163000ACB45 /* Shared */,
+				9C59C4A62A834163000ACB45 /* SharedController */,
 				9C59C47C2A834127000ACB45 /* HITTimer */,
 				9C59C48E2A834128000ACB45 /* HITTimer Watch App */,
 				9C9BC4AF2A85274B001EDA39 /* Frameworks */,
@@ -251,17 +255,15 @@
 			path = EditerView;
 			sourceTree = "<group>";
 		};
-		9C59C4A62A834163000ACB45 /* Shared */ = {
+		9C59C4A62A834163000ACB45 /* SharedController */ = {
 			isa = PBXGroup;
 			children = (
-				9C4B6CF82ABB522000C60267 /* TimerData.swift */,
-				9C4B6CFB2ABB52DD00C60267 /* DataManager.swift */,
+				9C827EBA2AC607A3008097BE /* SwiftData */,
 				9C26E2982AB8DAFE00C30AFD /* WorkoutManager.swift */,
 				9C7279882ABCBDE500A34BC1 /* NotificationManager.swift */,
 				9C4B6CF52ABB3C3000C60267 /* WatchConnectManager.swift */,
-				9C8C29552ABECBC800C4A2C5 /* 1hour.mp3 */,
 			);
-			path = Shared;
+			path = SharedController;
 			sourceTree = "<group>";
 		};
 		9C7279712ABBACFF00A34BC1 /* SessionView */ = {
@@ -286,9 +288,20 @@
 			path = SelectView;
 			sourceTree = "<group>";
 		};
+		9C827EBA2AC607A3008097BE /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				9C4B6CF82ABB522000C60267 /* TimerData.swift */,
+				9C4B6CFB2ABB52DD00C60267 /* DataManager.swift */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
 		9C8C29572ABF19AF00C4A2C5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9CEC4D3A2ADD158400D10C10 /* DB */,
+				9C8C29552ABECBC800C4A2C5 /* 1hour.mp3 */,
 				9C8C29462ABE182C00C4A2C5 /* AudioPlayer.swift */,
 				9C16F4682A85D82B00299EA8 /* IntervalTimer.swift */,
 				9C9BC4A82A8525C1001EDA39 /* HapticFeedback.swift */,
@@ -331,6 +344,15 @@
 				9C59C4A22A834155000ACB45 /* TimePickerView.swift */,
 			);
 			path = TimerEditView;
+			sourceTree = "<group>";
+		};
+		9CEC4D3A2ADD158400D10C10 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				9CEC4D342ADD156800D10C10 /* HealthData.swift */,
+				9C288F7D2AD93015008BF3C4 /* NetworkManager.swift */,
+			);
+			path = DB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,9 +480,11 @@
 				9C4B6D022ABB64DE00C60267 /* WatchConnectManager.swift in Sources */,
 				9C8C29472ABE182C00C4A2C5 /* AudioPlayer.swift in Sources */,
 				9C9BC4A72A84AD9E001EDA39 /* TimerView.swift in Sources */,
+				9C288F7E2AD93015008BF3C4 /* NetworkManager.swift in Sources */,
 				9C16F4692A85D82B00299EA8 /* IntervalTimer.swift in Sources */,
 				9C7279892ABCBDE500A34BC1 /* NotificationManager.swift in Sources */,
 				9C59C47E2A834127000ACB45 /* HITTimerApp.swift in Sources */,
+				9CEC4D352ADD156800D10C10 /* HealthData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,8 +650,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HITTimer-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = HITTimer;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Your workout related data will be used to display your saved workouts in MyWorkouts.";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Workouts tracked by MyWorkouts on Apple Watch will be saved to HealthKit.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "record workout";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "record workout";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "rcord location for workout";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = junyeong.HITTimer;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -660,8 +685,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HITTimer-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = HITTimer;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Your workout related data will be used to display your saved workouts in MyWorkouts.";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Workouts tracked by MyWorkouts on Apple Watch will be saved to HealthKit.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "record workout";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "record workout";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "rcord location for workout";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = junyeong.HITTimer;
 				LD_RUNPATH_SEARCH_PATHS = (

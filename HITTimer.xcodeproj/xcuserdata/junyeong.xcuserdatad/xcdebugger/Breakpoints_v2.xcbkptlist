@@ -78,8 +78,8 @@
             filePath = "HITTimer/HITTimerApp.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "HITTimerApp"
             landmarkType = "14">
             <Locations>
@@ -151,7 +151,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D70F9325-D0C7-44EC-8318-CA1E7EF1B1F4"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HITTimer/View/TimerView/TimerSettingView.swift"
@@ -183,7 +183,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D7619CA1-FEDB-4F6D-ADF2-3767162E095A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HITTimer/View/TimerView/TimerSavedView.swift"
@@ -193,6 +193,38 @@
             endingLineNumber = "55"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "D7619CA1-FEDB-4F6D-ADF2-3767162E095A - 22b904077122da70"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; () in closure #1 (HITTimer.TimerData) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;HITTimer.TimerData&gt;, SwiftData.PersistentIdentifier, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt; in closure #1 () -&gt; SwiftUI.LazyVStack&lt;SwiftUI.ForEach&lt;Swift.Array&lt;HITTimer.TimerData&gt;, SwiftData.PersistentIdentifier, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;&gt; in HITTimer.TimerSavedView.body.getter : some"
+                  moduleName = "HITTimer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junyeong/Desktop/app/HITTimer/HITTimer/View/TimerView/TimerSavedView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "256">
+               </Location>
+               <Location
+                  uuid = "D7619CA1-FEDB-4F6D-ADF2-3767162E095A - 22b904077122da70"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; () in closure #1 (HITTimer.TimerData) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;HITTimer.TimerData&gt;, SwiftData.PersistentIdentifier, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt; in closure #1 () -&gt; SwiftUI.LazyVStack&lt;SwiftUI.ForEach&lt;Swift.Array&lt;HITTimer.TimerData&gt;, SwiftData.PersistentIdentifier, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;&gt; in HITTimer.TimerSavedView.body.getter : some"
+                  moduleName = "HITTimer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junyeong/Desktop/app/HITTimer/HITTimer/View/TimerView/TimerSavedView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "276">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -209,6 +241,115 @@
             endingLineNumber = "12"
             landmarkName = "SessionPagingView"
             landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "00DD5C87-97F5-4750-BE3D-1F95E9DC2355"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SharedController/SwiftData/DataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "insertData(totaltime:wotime:rstime:sets:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9CCC838-4526-46A3-B7F7-D6FAB5E6067E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SharedController/SwiftData/DataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "DataManager"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "A9CCC838-4526-46A3-B7F7-D6FAB5E6067E - 7ebda6b35b556cf3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HITTimer.DataManager.container.getter : Swift.Optional&lt;SwiftData.ModelContainer&gt;"
+                  moduleName = "HITTimer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junyeong/Desktop/app/HITTimer/SharedController/SwiftData/DataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "A9CCC838-4526-46A3-B7F7-D6FAB5E6067E - 229bce00ae4b12cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HITTimer.DataManager.container.setter : Swift.Optional&lt;SwiftData.ModelContainer&gt;"
+                  moduleName = "HITTimer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junyeong/Desktop/app/HITTimer/SharedController/SwiftData/DataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "A9CCC838-4526-46A3-B7F7-D6FAB5E6067E - 50b4d6936a65d33c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HITTimer.DataManager.container.modify : Swift.Optional&lt;SwiftData.ModelContainer&gt;"
+                  moduleName = "HITTimer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junyeong/Desktop/app/HITTimer/SharedController/SwiftData/DataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "A9CCC838-4526-46A3-B7F7-D6FAB5E6067E - ec43097048d12794"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HITTimer.DataManager.container.modify : Swift.Optional&lt;SwiftData.ModelContainer&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "HITTimer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junyeong/Desktop/app/HITTimer/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "A9CCC838-4526-46A3-B7F7-D6FAB5E6067E - f9e3bc581abdd261"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HITTimer.DataManager.init() -&gt; HITTimer.DataManager"
+                  moduleName = "HITTimer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junyeong/Desktop/app/HITTimer/SharedController/SwiftData/DataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ControlView: View {
     @EnvironmentObject var workoutManager: WorkoutManager
-    @EnvironmentObject var intervalTimer: IntervalTimer
     @EnvironmentObject var intervalTimerWithDate: IntervalTimerWithDate
 
     var body: some View {

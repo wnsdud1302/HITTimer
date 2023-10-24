@@ -11,7 +11,6 @@ import HealthKit
 struct MetricView: View {
     
     @EnvironmentObject var workoutmanager: WorkoutManager
-    @EnvironmentObject var intervalTimer: IntervalTimer
     @EnvironmentObject var intervalTimerWithDate: IntervalTimerWithDate
     
     @State var showSubseconds = false
