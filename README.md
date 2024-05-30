@@ -10,9 +10,9 @@
 ### 설정화면
 <div>
   <div>
-    <img src="https://github.com/wnsdud1302/HITTimer/assets/63913862/b5920bb2-6d86-413c-838a-2a38e8ca423f" width="300"/>
-    <img src="https://github.com/wnsdud1302/HITTimer/assets/63913862/d9ed5e1b-54a2-4bb1-971d-443a71c167f5" width="300"/>
-    <img src="https://github.com/wnsdud1302/HITTimer/assets/63913862/70aca383-a06a-4d4c-a32a-71c7507c3522" width="300"/>
+    <img src="https://github.com/wnsdud1302/HITTimer/assets/63913862/b5920bb2-6d86-413c-838a-2a38e8ca423f" width="250"/>
+    <img src="https://github.com/wnsdud1302/HITTimer/assets/63913862/d9ed5e1b-54a2-4bb1-971d-443a71c167f5" width="250"/>
+    <img src="https://github.com/wnsdud1302/HITTimer/assets/63913862/70aca383-a06a-4d4c-a32a-71c7507c3522" width="250"/>
   </div>
   <div>
     <p>
@@ -28,8 +28,8 @@
 ### 타이머 화면
 
 <div>
-  <img src="https://github.com/wnsdud1302/HITTimer/assets/63913862/b1ad22ac-1480-4825-8a1a-6cd5185c1d5d" width="300"/>
-  <img src="https://github.com/wnsdud1302/HITTimer/assets/63913862/ccf600b6-98b0-4cbc-8778-57963185531c" width="300"/>
+  <img src="https://github.com/wnsdud1302/HITTimer/assets/63913862/b1ad22ac-1480-4825-8a1a-6cd5185c1d5d" width="250"/>
+  <img src="https://github.com/wnsdud1302/HITTimer/assets/63913862/ccf600b6-98b0-4cbc-8778-57963185531c" width="250"/>
   <p>
       각각 운동화면과 휴식화면이다. 일시정지를 누르면 타이머를 일시정지할 수 있고 취소를 누르면 타이머를 종료할 수 있다.
   </p>
